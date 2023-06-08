@@ -3,8 +3,9 @@
     var settings = $.extend(
       {
         // These are the defaults.
-        acceptButtonClasses:
-          'btn-customRm mat-raised-button mat-button-base mat-primary mr-3',
+        /*acceptButtonClasses:
+          'btn-customRm mat-raised-button mat-button-base mat-primary mr-3',*/
+        acceptButtonClasses: 'btn-color btn-customRm mr-3',
         acceptButtonKey: '_accept_cookie',
         acceptButtonClick: 'onClickCookieAccept()',
         rejectButtonClick: 'rejectAll()',
@@ -91,7 +92,7 @@
             cookie_name_text:'Çerez Adı',
             provider_text:'Sağlayıcı',
             purposes_of_cookies_text:'Kullanım Amacı',
-            period_text:'Süresixx',
+            period_text:'Süresi',
                 }
       },
       options
@@ -125,8 +126,8 @@
        </p>
        <div class="input-group-lg pull-right d-flex-customRm justify-content-center-customRm">
        <a id="accept-cookie"  onclick="${settings.acceptButtonClick}" type="button" class="${settings.acceptButtonClasses}">${settings.buttonTexts.accept}</a>
-       <button id="decline-cookie" type="button" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3" onclick="${settings.rejectButtonClick}">${settings.buttonTexts.reject}</button>
-       <button id="open-cookie-settings" type="button" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3">${settings.buttonTexts.settings}</button>
+       <button id="decline-cookie" type="button" class="${settings.acceptButtonClasses}" onclick="${settings.rejectButtonClick}">${settings.buttonTexts.reject}</button>
+       <button id="open-cookie-settings" type="button" class="${settings.acceptButtonClasses}">${settings.buttonTexts.settings}</button>
        </div>
    </div>
 
@@ -396,10 +397,10 @@
           
        <div class="modal-footer-customRm d-flex-customRm-customRm justify-content-center-customRm">
        <p class="pull-left nobottommargin d-flex-customRm" style="margin-bottom: 0;">
-           <button type="button" id="decline-all" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3" onclick="${settings.rejectButtonClick}">
+           <button type="button" id="decline-all" class="${settings.acceptButtonClasses}" onclick="${settings.rejectButtonClick}">
               ${settings.buttonTexts.reject}               
            </button>
-               <a type="button" id="accept-all" class="btn-customRm mat-raised-button mat-button-base mat-primary" onclick="${settings.choosedCookieAcceptButtonClick}">
+               <a type="button" id="accept-all" class="${settings.acceptButtonClasses}" onclick="${settings.choosedCookieAcceptButtonClick}">
                    ${settings.buttonTexts.choosedCookie}
                </a>      
        </p>

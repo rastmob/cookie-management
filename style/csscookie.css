@@ -545,6 +545,9 @@
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  /*background-color: #52af52;
+  color: #fff;*/
   }
   .btn-customRm:focus,
   .btn-customRm:hover {
@@ -569,7 +572,10 @@
   a.btn-customRm.disabled {
   pointer-events: none;
   }
-  
+  .btn-color{
+    background-color: blue;
+    color: #fff !important;
+  }
   @-webkit-keyframes progress-bar-stripes {
   from {
   background-position: 1rem 0;
