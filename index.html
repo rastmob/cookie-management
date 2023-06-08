@@ -2,489 +2,201 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style/csscookie.css">
- 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/csscookie.css">
+
 
 </head>
 
 <body>
 
-  <div id="cookiePermissionContent"><div class="cookie-bar">
-    <p class="pull-left text-justify-customRm">
-       Site deneyiminizi iyileştirmek, içerikleri ve reklamları kişiselleştirmek ve site trafiğini analiz etmek amacıyla çerezler kullanıyoruz. Çerezler hakkında detaylı bilgi için 
-                     <a href="/tr/cookie-policy" target="_blank"> Çerez Politikamızı  </a> 
-                     inceleyebilirsiniz. Kesinlikle gerekli olmayan çerezlerin kullanımına ve çerezler aracılığıyla toplanan kişisel verilerinizin yurt dışına aktarılmasına onay vermek için 
-                     
-                       <strong>'Tümünü Kabul Et'</strong> 
-                       
-                     butonuna tıklayabilirsiniz.
-    </p>
-    <div class="input-group-lg pull-right d-flex-customRm justify-content-center-customRm">
-    <a id="accept-cookie" onclick="onClickCookieAccept()" type="button" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3">Tümünü Kabul Et</a>
-    <button id="decline-cookie" type="button" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3" onclick="rejectAll()">Tümünü Reddet</button>
-    <button id="open-cookie-settings" type="button" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3">Çerez Ayarları</button>
-    </div>
-</div>
+    <div id="cookiePermissionContent">
+        <div class="cookie-bar">
 
-<!-- Modal -->
-<div class="modal-customRm fade" id="cookieSettingsModal" role="dialog">
-    <div class="modal-dialog-customRm modal-lg-customRm">
-    <div class="modal-content-customRm">
-        <div class="modal-header-customRm">
-            <button type="button" class="close-customRm" data-dismiss="modal"><span class="h2">×</span></button>
-        <h3 class="modal-title-customRm">
-             Çerez Yönetim Paneli
-        </h3>
-        </div>
-        <div class="modal-body-customRm">
-            <div class="row-customRm">
-        <div class="col-md-12-customRm">
-            <p class="text-justify-customRm">
-             Sitemizde kullanılan çerezlerin detaylarına aşağıdan ulaşabilir, ayrıntılı bilgi için 
-                     <a href="/tr/cookie-policy" target="_blank"> Çerez Politikamızı </a> 
-                     inceleyebilirsiniz. Varsayılan ayarları değiştirmek için kutucuklara tıklayabilir ve ardından «Seçimleri Onayla» butonuna tıklayarak seçimlerinizi koruyabilirsiniz.
-                 
-            </p>
-        </div>
-
-    </div>
-    <hr>
-
-    <div class="row-customRm cookie-modal-title">
-        <div class="col-md-4-customRm">
-            <h4>Sitemizde Kullanılan Çerezler</h4>
-        </div>
-        <div class="col-md-6-customRm">
-            <h4>Çerezlerin Kullanım Amaçları</h4>
-        </div>
-        <div class="col-md-2-customRm">
-            <h4>Durum</h4>
-        </div>
-    </div>
-    <hr>
-    <div class="row-customRm collapse-table">
-        <div class="col-md-4-customRm">
-            <h4 class="font-weight-bold-customRm">
-                 Zorunlu/Teknik Çerezler
-            </h4>
-        </div>
-        <div class="col-md-6-customRm">
-            <p>
-                Zorunlu/teknik çerezler, sitemizin kullanılabilir hale gelmesini sağlamak amacıyla kullanılmaktadır.
-                         <a class="rm_collapse_link" target_id="collapseRequired" role="button" aria-expanded="false" aria-controls="collapseRequired"> Ayrıntılı Bilgi İçin Tıklayınız.	 </a> 
-             </p>
-        </div>
-        <div class="col-md-2-customRm">
-            <!-- Rounded switch --><br>
-            <label class="switch pull-right">
-             <input id="required-cookie-checkbox" type="checkbox" checked="" disabled="">
-             <span class="slider round"></span>
-             </label>
-        </div>
-    </div>
-    <div class="collapse-customRm" id="collapseRequired">
-      <div class="row-customRm">
-         <div class="col-md-12-customRm">
-
-         <div class="table-responsive">
-         &ZeroWidthSpace;
-
-             <table class="table-customRm table-bordered">
-             <thead>
-             <tr>
-                 <th scope="col-customRm">Çerez Adı
-                 </th>
-                 <th scope="col-customRm">Sağlayıcı
-                 </th>
-                 <th scope="col-customRm">Kullanım Amacı
-                 </th>
-                 <th scope="col-customRm">Süresi
-                 </th>
-             </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <td>_lang</td>
-                 <td>Borusan Cat</td>
-                 <td>Dil seçimi için kullanılır.	</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_selectCountry</td>
-                 <td>Borusan Cat</td>
-                 <td>Ülke seçimi bilgisi için kullanılır.</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_marketing_cookie</td>
-                 <td>Borusan Cat</td>
-                 <td>Kullanıcının pazarlama çerezi seçiminin aktif olduğu bilgisi tutulur.</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_performance_cookie</td>
-                 <td>Borusan Cat</td>
-                 <td>Kullanıcının performans çerezleri seçiminin aktif olduğu bilgisi tutulur.</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_required_cookie</td>
-                 <td>Borusan Cat</td>
-                 <td>Zorunlu çerezlerin aktif olduğu bilgisi tutulur.</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_functional_cookie</td>
-                 <td>Borusan Cat</td>
-                 <td>Kullanıcının işlevsellik çerezi seçiminin aktif olduğu bilgisi tutulur.</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_reject</td>
-                 <td>Borusan Cat</td>
-                 <td>Kullanıcının zorunlu çerezler haricinde tüm çerezleri reddettiğine dair bilgi tutulur.</td>
-                 <td>Süresiz</td>
-             </tr><tr>
-                 <td>_jv</td>
-                 <td>JivoChat</td>
-                 <td>JivoChat tarafından sağlanan çerezlerdir.</td>
-                 <td>Süresiz</td>
-             </tr></tbody>
-         </table>
-         </div>
-
-
-     </div>
-    </div>
-  </div>
-
-    
-    <hr>
-    <div class="row-customRm collapse-table">
-        <div class="col-md-4-customRm">
-            <h4 class="font-weight-bold-customRm">
-                Performans/Analitik Çerezler
-            </h4>
-        </div>
-        <div class="col-md-6-customRm">
-            <p>
-            Performans/analitik çerezler, Sitemizi kullanımınız hakkında istatiksel bilgi toplamak amacıyla kullanılmaktadır.  
-                         <a class="rm_collapse_link" target_id="collapsePerformance" role="button" aria-expanded="false" aria-controls="collapsePerformance"> Ayrıntılı Bilgi İçin Tıklayınız.	</a> 
-            </p>
-        </div>
-        <div class="col-md-2-customRm">
-            <!-- Rounded switch --><br>
-            <label class="switch pull-right">
-             <input id="performance-cookie-checkbox" type="checkbox">
-             <span class="slider round"></span>
-             </label>
         </div>
     </div>
 
-    <div class="collapse-customRm" id="collapsePerformance">
-     <div class="row-customRm">
-          <div class="col-md-12-customRm">
-             <div class="table-responsive">
-             <table class="table-customRm table-bordered">
-             <thead>
-                 <tr>
-                 <th scope="col-customRm">Çerez Adı
-                 </th>
-                 <th scope="col-customRm">Sağlayıcı
-                 </th>
-                 <th scope="col-customRm">Kullanım Amacı
-                 </th>
-                 <th scope="col-customRm">Süresi
-                 </th>
-                 </tr>
-             </thead>
-            
-             <tbody>
-             <tr>
-                           <td>_ga</td>
-                           <td>Google</td>
-                           <td>Bu çerez, istemci tanımlayıcısı olarak rastgele oluşturulmuş bir sayı atayarak benzersiz kullanıcıları ayırt etmek için kullanılır.</td>
-                           <td>2 ay</td>
-                       </tr><tr>
-                           <td>_gid</td>
-                           <td>Google</td>
-                           <td>Google Analytics’in sitemizi ziyaret eden kullanıcıları birbirinden ayırabilmek için kullanılır.</td>
-                           <td>24 saat</td>
-                       </tr><tr>
-                           <td>_hjAbsoluteSessionInProgress</td>
-                           <td>Hotjar</td>
-                           <td>Hotjar Bu çerez, bir kullanıcının ilk sayfa görüntüleme oturumunu tespit etmek için kullanılır. Bu, tanımlama bilgisi tarafından ayarlanan bir Doğru/Yanlış bayrağıdır.</td>
-                           <td>30 dakika</td>
-                       </tr><tr>
-                           <td>_hjFirstSeen</td>
-                           <td>Hotjar</td>
-                           <td>Bu, yeni bir kullanıcının ilk oturumunu tanımlamak için ayarlanmıştır. Hotjarın bu kullanıcıyı ilk kez görüp görmediğini gösteren bir doğru/yanlış değeri saklar. Yeni kullanıcı oturumlarını tanımlamak için Kayıt filtreleri tarafından kullanılır.</td>
-                           <td>Session</td>
-                       </tr><tr>
-                           <td>_hjIncludedInPageviewSample</td>
-                           <td>Hotjar</td>
-                           <td>Bu çerez, söz konusu kullanıcının sitenizin sayfa görüntüleme limiti tarafından tanımlanan veri örneğine dahil olup olmadığını Hotjar a bildirmek için ayarlanmıştır.</td>
-                           <td>1 gün</td>
-                       </tr><tr>
-                           <td>_hjIncludedInSessionSample</td>
-                           <td>Hotjar</td>
-                           <td>Bu çerez, söz konusu kullanıcının sitenizin günlük oturum limiti tarafından tanımlanan veri örneğine dahil olup olmadığını Hotjar a bildirmek için ayarlanmıştır.</td>
-                           <td>30 dakika</td>
-                       </tr><tr>
-                           <td>_hjSession_{id}</td>
-                           <td>Hotjar</td>
-                           <td>	Geçerli oturum verilerini tutan bir tanımlama bilgisi. Bu, oturum penceresindeki sonraki isteklerin aynı Hotjar oturumuna atfedilmesini sağlar.</td>
-                           <td>30 dakika</td>
-                       </tr><tr>
-                           <td>_hjSessionUser_{id}</td>
-                           <td>Hotjar</td>
-                           <td>Cihazınız üzerinden gerçekleştirilen oturumun tanınması için kullanılır ve her bir kullanıcıya tekil bir Hotjar ID’si tanımlar.</td>
-                           <td>1 yıl</td>
-                       </tr><tr>
-                           <td>OTZ</td>
-                           <td>Google</td>
-                           <td>"OTZ" çerezi, web sitesi trafik bilgilerini izlemek için Google analytics tarafından kullanılır.</td>
-                           <td>18 gün</td>
-                       </tr>
-             </tbody>
-             </table>
-             </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        </div>
-      </div>
-    </div>
+    <script>
+        $('document').ready(function () {
+            $("#coveredPage").cookieSettings({
+                description: `Site deneyiminizi iyileştirmek, içerikleri ve reklamları kişiselleştirmek ve site trafiğini analiz etmek amacıyla çerezler kullanıyoruz. Çerezler hakkında detaylı bilgi için Çerez Politikamızı inceleyebilirsiniz. Kesinlikle gerekli olmayan çerezlerin kullanımına ve çerezler aracılığıyla toplanan kişisel verilerinizin yurt dışına aktarılmasına onay vermek için 'Tümünü Kabul Et' butonuna tıklayabilirsiniz.`,
+                buttonTexts: {
+                    reject: "Tümünü Reddet",
+                    accept: "Tümünü Kabul Et",
+                    settings: "Çerez Ayarları",
+                    choosedCookie: "Seçimlerimi Onayla"
 
-    <hr>
-    <div class="row-customRm collapse-table">
-        <div class="col-md-4-customRm">
-            <h4 class="font-weight-bold-customRm">İşlevsellik Çerezleri</h4>
-        </div>
-        <div class="col-md-6-customRm">
-            <p>
-            İşlevsellik çerezleri, Sitemizde kullanım tercihlerinizi  hatırlamak ve kişiselleştirmek amacıyla kullanılmaktadır. 
-                         <a class="rm_collapse_link" target_id="collapseFunctional" role="button" aria-expanded="false" aria-controls="collapseFunctional"> Ayrıntılı Bilgi İçin Tıklayınız.	</a>  
-            </p>
-        </div>
-        <div class="col-md-2-customRm">
-            <!-- Rounded switch --><br>
-            <label class="switch pull-right">
-             <input id="functional-cookie-checkbox" type="checkbox">
-             <span class="slider round"></span>
-             </label>
-        </div>
-    </div>
+                },
 
-    <div class="collapse-customRm" id="collapseFunctional">
-      <div class="row-customRm">
-          <div class="col-md-12-customRm">
-         <div class="table-responsive">
-         <table class="table-customRm table-bordered">
-             <thead>
-             <tr>
-                 <th scope="col-customRm">Çerez Adı
-                 </th>
-                 <th scope="col-customRm">Sağlayıcı
-                 </th>
-                 <th scope="col-customRm">Kullanım Amacı
-                 </th>
-                 <th scope="col-customRm">Süresi
-                 </th>
-             </tr>
-             </thead>
-             <tbody>
-             <tr>
-                           <td>NID</td>
-                           <td>Google</td>
-                           <td>Google bu çerezi kullanıcının kendine özel ayarları varsa takip için kullanır. Başka bir sayfaya geçilince bu bilgiler ile kıyaslar ve anlar. (ör: dil, arama seçenekleri vs. gibi.)</td>
-                           <td>6 ay</td>
-                       </tr>
-             </tbody>
-         </table>
-         </div>
+                modalTitle: `Çerez Yönetim Paneli`,
+                modalDescription: `Sitemizde kullanılan çerezlerin detaylarına aşağıdan ulaşabilir, ayrıntılı bilgi için Çerez Politikamızı inceleyebilirsiniz. Varsayılan ayarları değiştirmek için kutucuklara tıklayabilir ve ardından «Seçimleri Onayla» butonuna tıklayarak seçimlerinizi koruyabilirsiniz.`,
 
-      </div>
-     </div>
-    </div>
+                cookieTypes: {
+                    required_cookies: "Zorunlu/Teknik Çerezler",
+                    performance_analytics_cookies: "Performans/Analitik Çerezler",
+                    functional_cookies: "İşlevsellik Çerezleri",
+                    marketing_cookies: "Pazarlama Çerezleri"
+                },
 
-    <hr>
-    <div class="row-customRm collapse-table">
-        <div class="col-md-4-customRm">
-            <h4 class="font-weight-bold-customRm">Pazarlama Çerezleri</h4>
-        </div>
-        <div class="col-md-6-customRm">
-            <p>
-            Pazarlama çerezleri, ilgi alanlarınıza göre kişiselleştirilmiş içerik sunmak ve pazarlama faaliyetlerinin etkinliğini ölçmek amaçlarıyla kullanılmaktadır.
-                         <a class="rm_collapse_link" target_id="collapseMarketing" role="button" aria-expanded="false" aria-controls="collapseMarketing"> Ayrıntılı Bilgi İçin Tıklayınız.	</a>  
-            </p>
-        </div>
-        <div class="col-md-2-customRm">
-            <!-- Rounded switch --><br>
-            <label class="switch pull-right">
-             <input id="marketing-cookie-checkbox" type="checkbox">
-             <span class="slider round"></span>
-             </label>
-        </div>
-    </div>
+                requiredCookieContents: [{
+                    cookie_name: '_lang',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Dil seçimi için kullanılır.	',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_selectCountry',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Ülke seçimi bilgisi için kullanılır.',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_marketing_cookie',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Kullanıcının pazarlama çerezi seçiminin aktif olduğu bilgisi tutulur.',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_performance_cookie',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Kullanıcının performans çerezleri seçiminin aktif olduğu bilgisi tutulur.',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_required_cookie',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Zorunlu çerezlerin aktif olduğu bilgisi tutulur.',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_functional_cookie',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Kullanıcının işlevsellik çerezi seçiminin aktif olduğu bilgisi tutulur.',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_reject',
+                    cookie_provider: 'Borusan Cat',
+                    cookie_target: 'Kullanıcının zorunlu çerezler haricinde tüm çerezleri reddettiğine dair bilgi tutulur.',
+                    cookie_time: 'Süresiz',
+                },
+                {
+                    cookie_name: '_jv',
+                    cookie_provider: 'JivoChat',
+                    cookie_target: 'JivoChat tarafından sağlanan çerezlerdir.',
+                    cookie_time: 'Süresiz',
+                },
+                ],
+                performanceAnalyticalCookieContents: [{
+                    cookie_name: '_ga',
+                    cookie_provider: 'Google',
+                    cookie_target: 'Bu çerez, istemci tanımlayıcısı olarak rastgele oluşturulmuş bir sayı atayarak benzersiz kullanıcıları ayırt etmek için kullanılır.',
+                    cookie_time: '2 ay',
+                },
+                {
+                    cookie_name: '_gid',
+                    cookie_provider: 'Google',
+                    cookie_target: 'Google Analytics’in sitemizi ziyaret eden kullanıcıları birbirinden ayırabilmek için kullanılır.',
+                    cookie_time: '24 saat',
+                },
+                {
+                    cookie_name: '_hjAbsoluteSessionInProgress',
+                    cookie_provider: 'Hotjar',
+                    cookie_target: 'Hotjar Bu çerez, bir kullanıcının ilk sayfa görüntüleme oturumunu tespit etmek için kullanılır. Bu, tanımlama bilgisi tarafından ayarlanan bir Doğru/Yanlış bayrağıdır.',
+                    cookie_time: '30 dakika',
+                },
+                {
+                    cookie_name: '_hjFirstSeen',
+                    cookie_provider: 'Hotjar',
+                    cookie_target: 'Bu, yeni bir kullanıcının ilk oturumunu tanımlamak için ayarlanmıştır. Hotjarın bu kullanıcıyı ilk kez görüp görmediğini gösteren bir doğru/yanlış değeri saklar. Yeni kullanıcı oturumlarını tanımlamak için Kayıt filtreleri tarafından kullanılır.',
+                    cookie_time: 'Session',
+                },
+                {
+                    cookie_name: '_hjIncludedInPageviewSample',
+                    cookie_provider: 'Hotjar',
+                    cookie_target: 'Bu çerez, söz konusu kullanıcının sitenizin sayfa görüntüleme limiti tarafından tanımlanan veri örneğine dahil olup olmadığını Hotjar a bildirmek için ayarlanmıştır.',
+                    cookie_time: '1 gün',
+                },
+                {
+                    cookie_name: '_hjIncludedInSessionSample',
+                    cookie_provider: 'Hotjar',
+                    cookie_target: 'Bu çerez, söz konusu kullanıcının sitenizin günlük oturum limiti tarafından tanımlanan veri örneğine dahil olup olmadığını Hotjar a bildirmek için ayarlanmıştır.',
+                    cookie_time: '30 dakika',
+                },
+                {
+                    cookie_name: '_hjSession_{id}',
+                    cookie_provider: 'Hotjar',
+                    cookie_target: '	Geçerli oturum verilerini tutan bir tanımlama bilgisi. Bu, oturum penceresindeki sonraki isteklerin aynı Hotjar oturumuna atfedilmesini sağlar.',
+                    cookie_time: '30 dakika',
+                },
+                {
+                    cookie_name: '_hjSessionUser_{id}',
+                    cookie_provider: 'Hotjar',
+                    cookie_target: 'Cihazınız üzerinden gerçekleştirilen oturumun tanınması için kullanılır ve her bir kullanıcıya tekil bir Hotjar ID’si tanımlar.',
+                    cookie_time: '1 yıl',
+                },
+                {
+                    cookie_name: 'OTZ',
+                    cookie_provider: 'Google',
+                    cookie_target: '"OTZ" çerezi, web sitesi trafik bilgilerini izlemek için Google analytics tarafından kullanılır.',
+                    cookie_time: '18 gün',
+                },
+                ],
+                functionalityCookieContents: [{
+                    cookie_name: 'NID',
+                    cookie_provider: 'Google',
+                    cookie_target: 'Google bu çerezi kullanıcının kendine özel ayarları varsa takip için kullanır. Başka bir sayfaya geçilince bu bilgiler ile kıyaslar ve anlar. (ör: dil, arama seçenekleri vs. gibi.)',
+                    cookie_time: '6 ay',
+                },
+                ],
+                marketingCookieContents: [
+                    {
+                        cookie_name: '_ins',
+                        cookie_provider: 'İnsider',
+                        cookie_target: 'İnsider tarafından sağlanan çerezlerdir.',
+                        cookie_time: 'Süresiz',
+                    },
+                    {
+                        cookie_name: '_fbp',
+                        cookie_provider: 'Facebook',
+                        cookie_target: 'Facebook tarafından sağlanan çerezler olup, reklam amaçlı kullanılan çerezlerdir 6 ay boyunca saklanır.',
+                        cookie_time: '6 ay',
+                    },
+                    {
+                        cookie_name: '1P_JAR',
+                        cookie_provider: 'Google',
+                        cookie_target: 'Sitenin istatistiki verilerini, dönüşüm sayılarını almak için kullanılır.',
+                        cookie_time: '1 ay',
+                    },
 
-    <div class="collapse-customRm" id="collapseMarketing">
-     <div class="row-customRm">
-      <div class="col-md-12-customRm">
+                ],
+                cookieTableTitles: {
+                    cookie_used_site_title: "Sitemizde Kullanılan Çerezler",
+                    cookie_purposes_title: "Çerezlerin Kullanım Amaçları",
+                    cookie_status_title: "Durum",
 
-         <div class="table-responsive">
-         <table class="table-customRm table-bordered">
-             <thead>
-             <tr>
-                 <th scope="col-customRms">Çerez Adı
-                 </th>
-                 <th scope="col-customRm">Sağlayıcı
-                 </th>
-                 <th scope="col-customRm">Kullanım Amacı
-                 </th>
-                 <th scope="col-customRm">Süresi
-                 </th>
-             </tr>
-             </thead>
-             <tbody>
-             <tr>
-                           <td>_ins</td>
-                           <td>İnsider</td>
-                           <td>İnsider tarafından sağlanan çerezlerdir.</td>
-                           <td>Süresiz</td>
-                       </tr><tr>
-                           <td>_fbp</td>
-                           <td>Facebook</td>
-                           <td>Facebook tarafından sağlanan çerezler olup, reklam amaçlı kullanılan çerezlerdir 6 ay boyunca saklanır.</td>
-                           <td>6 ay</td>
-                       </tr><tr>
-                           <td>1P_JAR</td>
-                           <td>Google</td>
-                           <td>Sitenin istatistiki verilerini, dönüşüm sayılarını almak için kullanılır.</td>
-                           <td>1 ay</td>
-                       </tr>
-           
-             </tbody>
-         </table>
-         </div>
-
-      </div>
-     </div>
-    </div>
-
- </div>
-       
-    <div class="modal-footer-customRm d-flex-customRm-customRm justify-content-center-customRm">
-    <p class="pull-left nobottommargin d-flex-customRm" style="margin-bottom: 0;">
-        <button type="button" id="decline-all" class="btn-customRm mat-raised-button mat-button-base mat-primary mr-3" onclick="rejectAll()">
-           Tümünü Reddet               
-        </button>
-            <a type="button" id="accept-all" class="btn-customRm mat-raised-button mat-button-base mat-primary" onclick="choosedCookieAccept()">
-                Seçimlerimi Onayla
-            </a>      
-    </p>
-    </div>
-       
-
- </div>
-</div>
-</div>
- 
-</div>
-
-  <script>
-    $('document').ready(function () {
-      $("#coveredPage").cookieSettings({
-        description: `Site deneyiminizi iyileştirmek, içerikleri ve reklamları kişiselleştirmek ve site trafiğini analiz etmek amacıyla çerezler kullanıyoruz. Çerezler hakkında detaylı bilgi için Çerez Politikamızı inceleyebilirsiniz. Kesinlikle gerekli olmayan çerezlerin kullanımına ve çerezler aracılığıyla toplanan kişisel verilerinizin yurt dışına aktarılmasına onay vermek için 'Tümünü Kabul Et' butonuna tıklayabilirsiniz.`,
-        buttonTexts: {
-          reject: "Tümünü Reddet",
-          accept: "Tümünü Kabul Et",
-          settings: "Çerez Ayarları",
-          choosedCookie: "Seçimlerimi Onayla"
-        },
-
-        modalTitle: `Çerez Yönetim Paneli`,
-        modalDescription: `Sitemizde kullanılan çerezlerin detaylarına aşağıdan ulaşabilir, ayrıntılı bilgi için Çerez Politikamızı inceleyebilirsiniz. Varsayılan ayarları değiştirmek için kutucuklara tıklayabilir ve ardından «Seçimleri Onayla» butonuna tıklayarak seçimlerinizi koruyabilirsiniz.`,
-        cookieTypes: {
-          required_cookies: "Zorunlu/Teknik Çerezler",
-          performance_analytics_cookies: "Performans/Analitik Çerezler",
-          functional_cookies: "İşlevsellik Çerezleri",
-          marketing_cookies: "Pazarlama Çerezleri"
-        },
-
-
-        requiredCookieContents: [{
-          cookie_name: '_lang',
-          cookie_provider: 'Borusan Cat',
-          cookie_target: 'Dil seçimi için kullanılır. ',
-          cookie_time: 'Süresiz',
-        },
-        {
-          cookie_name: '_selectCountry',
-          cookie_provider: 'Borusan Cat',
-          cookie_target: 'Ülke seçimi bilgisi için kullanılır.',
-          cookie_time: 'Süresiz',
-        },
-        ],
-
-
-        functionalityCookieContents: [{
-          cookie_name: 'NID',
-          cookie_provider: 'Google',
-          cookie_target: 'Google bu çerezi kullanıcının kendine özel ayarları varsa takip için kullanır. Başka bir sayfaya geçilince bu bilgiler ile kıyaslar ve anlar. (ör: dil, arama seçenekleri vs. gibi.)',
-          cookie_time: '6 ay',
-        },
-        ],
-
-
-        marketingCookieContents: [{
-          cookie_name: '_jv',
-          cookie_provider: 'JivoChat',
-          cookie_target: 'JivoChat tarafından sağlanan çerezlerdir.',
-          cookie_time: 'Süresiz',
-        },
-        {
-          cookie_name: '_ins',
-          cookie_provider: 'İnsider',
-          cookie_target: 'İnsider tarafından sağlanan çerezlerdir.',
-          cookie_time: 'Süresiz',
-        },
-
-
-        ],
-        performanceAnalyticalCookieContents: [{
-          cookie_name: '_ga',
-          cookie_provider: 'Google',
-          cookie_target: 'Bu çerez, istemci tanımlayıcısı olarak rastgele oluşturulmuş bir sayı atayarak benzersiz kullanıcıları ayırt etmek için kullanılır.',
-          cookie_time: '2 ay',
-        },
-        {
-          cookie_name: '_gid',
-          cookie_provider: 'Google',
-          cookie_target: 'Google Analytics’in sitemizi ziyaret eden kullanıcıları birbirinden ayırabilmek için kullanılır.',
-          cookie_time: '24 saat',
-        },
-        ],
-
-
-        cookieTableTitles: {
-          cookie_used_site_title: "Sitemizde Kullanılan Çerezler",
-          cookie_purposes_title: "Çerezlerin Kullanım Amaçları",
-          cookie_status_title: "Durum",
-        },
-        cookieTexts: {
-          required_cookies_text: `Zorunlu/teknik çerezler, sitemizin kullanılabilir hale gelmesini sağlamak amacıyla kullanılmaktadır. Ayrıntılı Bilgi İçin Tıklayınız.`,
-          performance_cookies_text: `Performans/analitik çerezler, Sitemizi kullanımınız hakkında istatiksel bilgi toplamak amacıyla kullanılmaktadır. Ayrıntılı Bilgi İçin Tıklayınız.`,
-          functional_cookies_text: `İşlevsellik çerezleri, Sitemizde kullanım tercihlerinizi hatırlamak ve kişiselleştirmek amacıyla kullanılmaktadır. Ayrıntılı Bilgi İçin Tıklayınız.`,
-          marketing_cookies_text: `Pazarlama çerezleri, ilgi alanlarınıza göre kişiselleştirilmiş içerik sunmak ve pazarlama faaliyetlerinin etkinliğini ölçmek amaçlarıyla kullanılmaktadır. Ayrıntılı Bilgi İçin Tıklayınız.`
-
-
-        }
-      });
-    });
-    
-  </script>
-
-  <script src="style/javascriptcookie.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                },
+                cookieTexts: {
+                    required_cookies_text: `Zorunlu/teknik çerezler, sitemizin kullanılabilir hale gelmesini sağlamak amacıyla kullanılmaktadır.
+                <a class="rm_collapse_link" target_id="collapseRequired" role="button" aria-expanded="false" aria-controls="collapseRequired"> Ayrıntılı Bilgi İçin Tıklayınız. </a> `,
+                    performance_cookies_text: `Performans/analitik çerezler, Sitemizi kullanımınız hakkında istatiksel bilgi toplamak amacıyla kullanılmaktadır.  
+                <a class="rm_collapse_link" target_id="collapsePerformance" role="button" aria-expanded="false" aria-controls="collapsePerformance"> Ayrıntılı Bilgi İçin Tıklayınız. </a> `,
+                    functional_cookies_text: `İşlevsellik çerezleri, Sitemizde kullanım tercihlerinizi  hatırlamak ve kişiselleştirmek amacıyla kullanılmaktadır. 
+                <a class="rm_collapse_link" target_id="collapseFunctional" role="button" aria-expanded="false" aria-controls="collapseFunctional"> Ayrıntılı Bilgi İçin Tıklayınız. </a>  `,
+                    marketing_cookies_text: `Pazarlama çerezleri, ilgi alanlarınıza göre kişiselleştirilmiş içerik sunmak ve pazarlama faaliyetlerinin etkinliğini ölçmek amaçlarıyla kullanılmaktadır.
+                 <a class="rm_collapse_link" target_id="collapseMarketing" role="button" aria-expanded="false" aria-controls="collapseMarketing"> Ayrıntılı Bilgi İçin Tıklayınız. </a>  `,
+                }
+            });
+        });
+    </script>
+    <script src="style/javascriptcookie.js"></script>
 </body>
 
 </html>
