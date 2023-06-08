@@ -85,7 +85,14 @@
                 <a class="rm_collapse_link" target_id="collapseFunctional" role="button" aria-expanded="false" aria-controls="collapseFunctional"> Ayrıntılı Bilgi İçin Tıklayınız. </a>  `,
           marketing_cookies_text: `Pazarlama çerezleri, ilgi alanlarınıza göre kişiselleştirilmiş içerik sunmak ve pazarlama faaliyetlerinin etkinliğini ölçmek amaçlarıyla kullanılmaktadır.
                  <a class="rm_collapse_link" target_id="collapseMarketing" role="button" aria-expanded="false" aria-controls="collapseMarketing"> Ayrıntılı Bilgi İçin Tıklayınız. </a>  `,
-        },
+       
+                },
+          tableTitles: {
+            cookie_name_text:'Çerez Adı',
+            provider_text:'Sağlayıcı',
+            purposes_of_cookies_text:'Kullanım Amacı',
+            period_text:'Süresixx',
+                }
       },
       options
     )
@@ -183,13 +190,13 @@
             <table class="table-customRm table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col-customRm">Çerez Adı
+                    <th scope="col-customRm"> ${settings.tableTitles.cookie_name_text}
                     </th>
-                    <th scope="col-customRm">Sağlayıcı
+                    <th scope="col-customRm">${settings.tableTitles.provider_text}
                     </th>
-                    <th scope="col-customRm">Kullanım Amacı
+                    <th scope="col-customRm">${settings.tableTitles.purposes_of_cookies_text}
                     </th>
-                    <th scope="col-customRm">Süresi
+                    <th scope="col-customRm">${settings.tableTitles.period_text}
                     </th>
                 </tr>
                 </thead>
@@ -243,13 +250,13 @@
                 <table class="table-customRm table-bordered">
                 <thead>
                     <tr>
-                    <th scope="col-customRm">Çerez Adı
+                    <th scope="col-customRm"> ${settings.tableTitles.cookie_name_text}
                     </th>
-                    <th scope="col-customRm">Sağlayıcı
+                    <th scope="col-customRm">${settings.tableTitles.provider_text}
                     </th>
-                    <th scope="col-customRm">Kullanım Amacı
+                    <th scope="col-customRm">${settings.tableTitles.purposes_of_cookies_text}
                     </th>
-                    <th scope="col-customRm">Süresi
+                    <th scope="col-customRm">${settings.tableTitles.period_text}
                     </th>
                     </tr>
                 </thead>
@@ -299,14 +306,14 @@
             <table class="table-customRm table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col-customRm">Çerez Adı
-                    </th>
-                    <th scope="col-customRm">Sağlayıcı
-                    </th>
-                    <th scope="col-customRm">Kullanım Amacı
-                    </th>
-                    <th scope="col-customRm">Süresi
-                    </th>
+                <th scope="col-customRm"> ${settings.tableTitles.cookie_name_text}
+                </th>
+                <th scope="col-customRm">${settings.tableTitles.provider_text}
+                </th>
+                <th scope="col-customRm">${settings.tableTitles.purposes_of_cookies_text}
+                </th>
+                <th scope="col-customRm">${settings.tableTitles.period_text}
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -355,14 +362,14 @@
             <table class="table-customRm table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col-customRms">Çerez Adı
-                    </th>
-                    <th scope="col-customRm">Sağlayıcı
-                    </th>
-                    <th scope="col-customRm">Kullanım Amacı
-                    </th>
-                    <th scope="col-customRm">Süresi
-                    </th>
+                <th scope="col-customRm"> ${settings.tableTitles.cookie_name_text}
+                </th>
+                <th scope="col-customRm">${settings.tableTitles.provider_text}
+                </th>
+                <th scope="col-customRm">${settings.tableTitles.purposes_of_cookies_text}
+                </th>
+                <th scope="col-customRm">${settings.tableTitles.period_text}
+                </th>
                 </tr>
                 </thead>
                 <tbody>
