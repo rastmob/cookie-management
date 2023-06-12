@@ -37,6 +37,11 @@ coll[i].addEventListener("click", function() {
 
 function onClickCookieAccept() {
   localStorage.setItem('_accept_cookie', 'true');
+
+  document.getElementById("performance-cookie-checkbox").checked = true;
+  document.getElementById("functional-cookie-checkbox").checked = true;
+  document.getElementById("marketing-cookie-checkbox").checked = true;
+
   choosedCookieAccept();
 }
 
@@ -64,7 +69,10 @@ function choosedCookieAccept() {
   if (!isPerformanceChecked && !isFunctionalChecked && !isMarketingChecked) {
       localStorage.setItem("_reject", "true");
   }
-
+  if (isPerformanceChecked && isFunctionalChecked && isMarketingChecked) {
+    localStorage.setItem("_accept_cookie", "true");
+  }
+  
   hideCookiebar()
   hideCookieSettingsModal()
 
