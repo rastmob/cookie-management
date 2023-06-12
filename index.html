@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/csscookie.css">
-    <!--required, marketing, analytics, functional --> 
+    <!--required, marketing, analytics, functional -->
     <script src="required.js" cookieType="reqiured"></script>
     <script src="marketing.js" cookieType="marketing"></script>
     <script src="analytics.js" cookieType="analytics"></script>
@@ -16,162 +16,239 @@
 
 <body>
 
+    <div class="fg-cookie-setting-modal">
+        <div id="openModal-cookie" class="modalDialog">
+            <div>
+                <a href="#" title="Close" class="close" onclick="hideCookieSettingsModal()">X</a>
+                <h2>Çerez Yönetim Paneli</h2>
+                <hr>
+                <p>Sitemizde kullanılan çerezlerin detaylarına aşağıdan ulaşabilir, ayrıntılı bilgi için <a
+                        href='https://www.fgwilson.com.tr/tr/cookie-policy'>Çerez Politikamızı</a> inceleyebilirsiniz.
+                    Varsayılan ayarları değiştirmek için kutucuklara tıklayabilir ve ardından «Seçimleri Onayla»
+                    butonuna tıklayarak seçimlerinizi koruyabilirsiniz.</p>
+                <div class="table-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Sitemizde Kullanılan Çerezler</th>
+                                <th scope="col">Çerezlerin Kullanım Amaçları</th>
+                                <th scope="col">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-weight-800">Zorunlu/Teknik Çerezler</td>
+                                <td>Zorunlu/teknik çerezler, sitemizin kullanılabilir hale gelmesini sağlamak amacıyla
+                                    kullanılmaktadır.
+                                    <span class="collapsible detail-info" id="zorunluTeknik">Ayrıntılı Bilgi İçin
+                                        Tıklayınız.</span>
+                                </td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" id="required-cookie-checkbox" checked disabled>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr id="zorunluTeknikcookie_content">
+                                <td colspan="3">
+                                    <table class="">
+                                        <thead>
+                                            <tr>
+                                                <th scope="">Çerez Adı
+                                                </th>
+                                                <th scope="">Sağlayıcı
+                                                </th>
+                                                <th scope="">Kullanım Amacı
+                                                </th>
+                                                <th scope="">Süresi
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>_marketing_cookie</td>
+                                                <td>FG Wilson Türkiye</td>
+                                                <td>Kullanıcının pazarlama çerezi seçiminin aktif olduğu bilgisi
+                                                    tutulur.</td>
+                                                <td>Süresiz</td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-800">Performans/Analitik Çerezler</td>
+                                <td>Performans/analitik çerezler, Sitemizi kullanımınız hakkında istatiksel bilgi
+                                    toplamak amacıyla kullanılmaktadır. <span class="collapsible detail-info"
+                                        id="performansAnalitik"> Ayrıntılı Bilgi İçin Tıklayınız. <span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" id="performance-cookie-checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr id="performansAnalitikcookie_content">
+                                <td colspan="3">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th scope="">Çerez Adı
+                                                </th>
+                                                <th scope="">Sağlayıcı
+                                                </th>
+                                                <th scope="">Kullanım Amacı
+                                                </th>
+                                                <th scope="">Süresi
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>_ga</td>
+                                                <td>Google</td>
+                                                <td>Bu çerez, istemci tanımlayıcısı olarak rastgele oluşturulmuş bir
+                                                    sayı atayarak benzersiz kullanıcıları ayırt etmek için kullanılır.
+                                                </td>
+                                                <td>2 ay</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-800">İşlevsellik Çerezleri</td>
+                                <td>İşlevsellik çerezleri, Sitemizde kullanım tercihlerinizi hatırlamak ve
+                                    kişiselleştirmek amacıyla kullanılmaktadır. <span class="collapsible detail-info"
+                                        id="islevsellik"> Ayrıntılı Bilgi İçin Tıklayınız. <span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" id="functional-cookie-checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr id="islevsellikcookie_content">
+                                <td colspan="3">
+                                    <table class="">
+                                        <thead>
+                                            <tr>
+                                                <th scope="">Çerez Adı
+                                                </th>
+                                                <th scope="">Sağlayıcı
+                                                </th>
+                                                <th scope="">Kullanım Amacı
+                                                </th>
+                                                <th scope="">Süresi
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>NID</td>
+                                                <td>Google</td>
+                                                <td>Google bu çerezi kullanıcının kendine özel ayarları varsa takip için
+                                                    kullanır. Başka bir sayfaya geçilince bu bilgiler ile kıyaslar ve
+                                                    anlar. (ör: dil, arama seçenekleri vs. gibi.)</td>
+                                                <td>6 ay</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-800">Pazarlama Çerezleri</td>
+                                <td>Pazarlama çerezleri, ilgi alanlarınıza göre kişiselleştirilmiş içerik sunmak ve
+                                    pazarlama faaliyetlerinin etkinliğini ölçmek amaçlarıyla kullanılmaktadır. <span
+                                        class="collapsible detail-info" id="pazarlama"> Ayrıntılı Bilgi İçin Tıklayınız.
+                                        <span></td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" id="marketing-cookie-checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr id="pazarlamacookie_content">
+                                <td colspan="3">
+                                    <table class="">
+                                        <thead>
+                                            <tr>
+                                                <th scope="">Çerez Adı
+                                                </th>
+                                                <th scope="">Sağlayıcı
+                                                </th>
+                                                <th scope="">Kullanım Amacı
+                                                </th>
+                                                <th scope="">Süresi
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>_ins</td>
+                                                <td>İnsider</td>
+                                                <td>İnsider tarafından sağlanan çerezlerdir.</td>
+                                                <td>Süresiz</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div class="fg-button-content">
+                        <div class="fg-cookie">
+                            <button class="fg-button" onclick="rejectAll()"><span>Tümünü Reddet</span></button>
+                            <button class="fg-button" onclick="choosedCookieAccept()"><span>Seçimlerimi
+                                    Onayla</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="cookiePermissionContent">
         <div class="cookie-bar">
-
+            <p class="pull-left text-justify">
+                Site deneyiminizi iyileştirmek, içerikleri ve reklamları kişiselleştirmek ve site trafiğini analiz etmek
+                amacıyla çerezler kullanıyoruz. Çerezler hakkında detaylı bilgi için
+                <a href="/tr/cookie-policy" target="_blank"> Çerez Politikamızı </a>
+                inceleyebilirsiniz. Kesinlikle gerekli olmayan çerezlerin kullanımına ve çerezler aracılığıyla toplanan
+                kişisel verilerinizin yurt dışına aktarılmasına onay vermek için
+                <strong>'Tümünü Kabul Et'</strong>
+                butonuna tıklayabilirsiniz.
+            </p>
+            <div class="input-group-lg pull-right d-flex justify-content-center">
+                <div class="fg-cookie">
+                    <button id="accept-cookie" onclick="onClickCookieAccept()" type="button" class="fgb-button">Tümünü
+                        Kabul Et</button>
+                    <button id="decline-cookie" type="button" class="fgb-button" onclick="rejectAll()">Tümünü
+                        Reddet</button>
+                    <a href="#" id="open-cookie-settings" type="button" class="fgb-button"
+                        onclick="showCookieSettingsModal()">Çerez Ayarları</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<style>
-    .btn-color{
-    background-color: rgb(182, 97, 91);
-    color: #fff !important;
-  }
-</style>
-    <script>
-        $('document').ready(function () {
-            $("#coveredPage").cookieSettings({
-                description: `Site deneyiminizi iyileştirmek, içerikleri ve reklamları kişiselleştirmek ve site trafiğini analiz etmek amacıyla çerezler kullanıyoruz. Çerezler hakkında detaylı bilgi için Çerez Politikamızı inceleyebilirsiniz. Kesinlikle gerekli olmayan çerezlerin kullanımına ve çerezler aracılığıyla toplanan kişisel verilerinizin yurt dışına aktarılmasına onay vermek için 'Tümünü Kabul Et' butonuna tıklayabilirsiniz.`,
-                buttonTexts: {
-                    reject: "Tümünü Reddet",
-                    accept: "Tümünü Kabul Et",
-                    settings: "Çerez Ayarları",
-                    choosedCookie: "Seçimlerimi Onayla"
+    <style>
+        .btn-color {
+            background-color: rgb(182, 97, 91);
+            color: #fff !important;
+        }
+    </style>
 
-                },
-
-                modalTitle: `Çerez Yönetim Paneli`,
-                modalDescription: `Sitemizde kullanılan çerezlerin detaylarına aşağıdan ulaşabilir, ayrıntılı bilgi için Çerez Politikamızı inceleyebilirsiniz. Varsayılan ayarları değiştirmek için kutucuklara tıklayabilir ve ardından «Seçimleri Onayla» butonuna tıklayarak seçimlerinizi koruyabilirsiniz.`,
-
-                cookieTypes: {
-                    required_cookies: "Zorunlu/Teknik Çerezler",
-                    performance_analytics_cookies: "Performans/Analitik Çerezler",
-                    functional_cookies: "İşlevsellik Çerezleri",
-                    marketing_cookies: "Pazarlama Çerezleri"
-                },
-
-                requiredCookieContents: [
-                    
-                {
-                    cookie_name: '_selectCountry',
-                    cookie_provider: 'Borusan Cat',
-                    cookie_target: 'Ülke seçimi bilgisi için kullanılır.',
-                    cookie_time: 'Süresiz',
-                },
-                
-                ],
-                performanceAnalyticalCookieContents: [{
-                    cookie_name: '_ga',
-                    cookie_provider: 'Google',
-                    cookie_target: 'Bu çerez, istemci tanımlayıcısı olarak rastgele oluşturulmuş bir sayı atayarak benzersiz kullanıcıları ayırt etmek için kullanılır.',
-                    cookie_time: '2 ay',
-                },
-                {
-                    cookie_name: '_gid',
-                    cookie_provider: 'Google',
-                    cookie_target: 'Google Analytics’in sitemizi ziyaret eden kullanıcıları birbirinden ayırabilmek için kullanılır.',
-                    cookie_time: '24 saat',
-                },
-                {
-                    cookie_name: '_hjAbsoluteSessionInProgress',
-                    cookie_provider: 'Hotjar',
-                    cookie_target: 'Hotjar Bu çerez, bir kullanıcının ilk sayfa görüntüleme oturumunu tespit etmek için kullanılır. Bu, tanımlama bilgisi tarafından ayarlanan bir Doğru/Yanlış bayrağıdır.',
-                    cookie_time: '30 dakika',
-                },
-                {
-                    cookie_name: '_hjFirstSeen',
-                    cookie_provider: 'Hotjar',
-                    cookie_target: 'Bu, yeni bir kullanıcının ilk oturumunu tanımlamak için ayarlanmıştır. Hotjarın bu kullanıcıyı ilk kez görüp görmediğini gösteren bir doğru/yanlış değeri saklar. Yeni kullanıcı oturumlarını tanımlamak için Kayıt filtreleri tarafından kullanılır.',
-                    cookie_time: 'Session',
-                },
-                {
-                    cookie_name: '_hjIncludedInPageviewSample',
-                    cookie_provider: 'Hotjar',
-                    cookie_target: 'Bu çerez, söz konusu kullanıcının sitenizin sayfa görüntüleme limiti tarafından tanımlanan veri örneğine dahil olup olmadığını Hotjar a bildirmek için ayarlanmıştır.',
-                    cookie_time: '1 gün',
-                },
-                {
-                    cookie_name: '_hjIncludedInSessionSample',
-                    cookie_provider: 'Hotjar',
-                    cookie_target: 'Bu çerez, söz konusu kullanıcının sitenizin günlük oturum limiti tarafından tanımlanan veri örneğine dahil olup olmadığını Hotjar a bildirmek için ayarlanmıştır.',
-                    cookie_time: '30 dakika',
-                },
-                {
-                    cookie_name: '_hjSession_{id}',
-                    cookie_provider: 'Hotjar',
-                    cookie_target: '	Geçerli oturum verilerini tutan bir tanımlama bilgisi. Bu, oturum penceresindeki sonraki isteklerin aynı Hotjar oturumuna atfedilmesini sağlar.',
-                    cookie_time: '30 dakika',
-                },
-                {
-                    cookie_name: '_hjSessionUser_{id}',
-                    cookie_provider: 'Hotjar',
-                    cookie_target: 'Cihazınız üzerinden gerçekleştirilen oturumun tanınması için kullanılır ve her bir kullanıcıya tekil bir Hotjar ID’si tanımlar.',
-                    cookie_time: '1 yıl',
-                },
-                {
-                    cookie_name: 'OTZ',
-                    cookie_provider: 'Google',
-                    cookie_target: '"OTZ" çerezi, web sitesi trafik bilgilerini izlemek için Google analytics tarafından kullanılır.',
-                    cookie_time: '18 gün',
-                },
-                ],
-                functionalityCookieContents: [{
-                    cookie_name: 'NID',
-                    cookie_provider: 'Google',
-                    cookie_target: 'Google bu çerezi kullanıcının kendine özel ayarları varsa takip için kullanır. Başka bir sayfaya geçilince bu bilgiler ile kıyaslar ve anlar. (ör: dil, arama seçenekleri vs. gibi.)',
-                    cookie_time: '6 ay',
-                },
-                ],
-                marketingCookieContents: [
-                    {
-                        cookie_name: '_ins',
-                        cookie_provider: 'İnsider',
-                        cookie_target: 'İnsider tarafından sağlanan çerezlerdir.',
-                        cookie_time: 'Süresiz',
-                    },
-                    {
-                        cookie_name: '_fbp',
-                        cookie_provider: 'Facebook',
-                        cookie_target: 'Facebook tarafından sağlanan çerezler olup, reklam amaçlı kullanılan çerezlerdir 6 ay boyunca saklanır.',
-                        cookie_time: '6 ay',
-                    },
-                    {
-                        cookie_name: '1P_JAR',
-                        cookie_provider: 'Google',
-                        cookie_target: 'Sitenin istatistiki verilerini, dönüşüm sayılarını almak için kullanılır.',
-                        cookie_time: '1 ay',
-                    },
-
-
-                ],
-                cookieTableTitles: {
-                    cookie_used_site_title: "Sitemizde Kullanılan Çerezler",
-                    cookie_purposes_title: "Çerezlerin Kullanım Amaçları",
-                    cookie_status_title: "Durum",
-
-                },
-                cookieTexts: {
-                    required_cookies_text: `Zorunlu/teknik çerezler, sitemizin kullanılabilir hale gelmesini sağlamak amacıyla kullanılmaktadır.
-                <a class="rm_collapse_link" target_id="collapseRequired" role="button" aria-expanded="false" aria-controls="collapseRequired"> Ayrıntılı Bilgi İçin Tıklayınız. </a> `,
-                    performance_cookies_text: `Performans/analitik çerezler, Sitemizi kullanımınız hakkında istatiksel bilgi toplamak amacıyla kullanılmaktadır.  
-                <a class="rm_collapse_link" target_id="collapsePerformance" role="button" aria-expanded="false" aria-controls="collapsePerformance"> Ayrıntılı Bilgi İçin Tıklayınız. </a> `,
-                    functional_cookies_text: `İşlevsellik çerezleri, Sitemizde kullanım tercihlerinizi  hatırlamak ve kişiselleştirmek amacıyla kullanılmaktadır. 
-                <a class="rm_collapse_link" target_id="collapseFunctional" role="button" aria-expanded="false" aria-controls="collapseFunctional"> Ayrıntılı Bilgi İçin Tıklayınız. </a>  `,
-                    marketing_cookies_text: `Pazarlama çerezleri, ilgi alanlarınıza göre kişiselleştirilmiş içerik sunmak ve pazarlama faaliyetlerinin etkinliğini ölçmek amaçlarıyla kullanılmaktadır.
-                 <a class="rm_collapse_link" target_id="collapseMarketing" role="button" aria-expanded="false" aria-controls="collapseMarketing"> Ayrıntılı Bilgi İçin Tıklayınız. </a>  `,
-                },
-                tableTitles: {
-            cookie_name_text:'Çerez Adı',
-            provider_text:'Sağlayıcı',
-            purposes_of_cookies_text:'Kullanım Amacı',
-            period_text:'Süresi',
-                }
-            });
-        });
-    </script>
 
     <script src="style/javascriptcookie.js"></script>
 </body>
