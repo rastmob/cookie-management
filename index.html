@@ -16,14 +16,14 @@
 
 <body>
 
-    <div class="fg-cookie-setting-modal">
+    <div class="rmob-cookie-setting-modal">
         <div id="openModal-cookie" class="modalDialog">
             <div>
                 <a href="#" title="Close" class="close" onclick="hideCookieSettingsModal()">X</a>
                 <h2>Çerez Yönetim Paneli</h2>
                 <hr>
                 <p>Sitemizde kullanılan çerezlerin detaylarına aşağıdan ulaşabilir, ayrıntılı bilgi için <a
-                        href='https://www.fgwilson.com.tr/tr/cookie-policy'>Çerez Politikamızı</a> inceleyebilirsiniz.
+                        href='https://www.rmobwilson.com.tr/tr/cookie-policy'>Çerez Politikamızı</a> inceleyebilirsiniz.
                     Varsayılan ayarları değiştirmek için kutucuklara tıklayabilir ve ardından «Seçimleri Onayla»
                     butonuna tıklayarak seçimlerinizi koruyabilirsiniz.</p>
                 <div class="table-content">
@@ -68,7 +68,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>_marketing_cookie</td>
-                                                <td>FG Wilson Türkiye</td>
+                                                <td>rmob Wilson Türkiye</td>
                                                 <td>Kullanıcının pazarlama çerezi seçiminin aktif olduğu bilgisi
                                                     tutulur.</td>
                                                 <td>Süresiz</td>
@@ -204,10 +204,10 @@
                     </table>
                 </div>
                 <div>
-                    <div class="fg-button-content">
-                        <div class="fg-cookie">
-                            <button class="fg-button" onclick="rejectAll()"><span>Tümünü Reddet</span></button>
-                            <button class="fg-button" onclick="choosedCookieAccept()"><span>Seçimlerimi
+                    <div class="rmob-button-content">
+                        <div class="rmob-cookie">
+                            <button class="rmob-button" onclick="rejectAll()"><span>Tümünü Reddet</span></button>
+                            <button class="rmob-button" onclick="choosedCookieAccept()"><span>Seçimlerimi
                                     Onayla</span></button>
                         </div>
                     </div>
@@ -220,27 +220,25 @@
             <p class="pull-left text-justify">
                 Site deneyiminizi iyileştirmek, içerikleri ve reklamları kişiselleştirmek ve site trafiğini analiz etmek
                 amacıyla çerezler kullanıyoruz. Çerezler hakkında detaylı bilgi için
-                <a href="/tr/cookie-policy" target="_blank"> Çerez Politikamızı </a>
+                <a href="/tr/cookie-policy" target="_blank" class="cookie-policy-text"> Çerez Politikamızı </a>
                 inceleyebilirsiniz. Kesinlikle gerekli olmayan çerezlerin kullanımına ve çerezler aracılığıyla toplanan
                 kişisel verilerinizin yurt dışına aktarılmasına onay vermek için
                 <strong>'Tümünü Kabul Et'</strong>
                 butonuna tıklayabilirsiniz.
             </p>
-            <div class="input-group-lg pull-right d-flex justify-content-center">
-                <div class="fg-cookie">
-                    <button id="accept-cookie" onclick="onClickCookieAccept()" type="button" class="fgb-button">Tümünü
+            <div class="input-group-lg pull-right d-flex-main justify-content-center-main rmob-cookie">
+                    <button id="accept-cookie" onclick="onClickCookieAccept()" type="button" class="rm-button mr-3">Tümünü
                         Kabul Et</button>
-                    <button id="decline-cookie" type="button" class="fgb-button" onclick="rejectAll()">Tümünü
+                    <button id="decline-cookie" type="button" class="rm-button mr-3" onclick="rejectAll()">Tümünü
                         Reddet</button>
-                    <a href="#" id="open-cookie-settings" type="button" class="fgb-button"
+                    <a href="#" id="open-cookie-settings" type="button" class="rm-button mr-3"
                         onclick="showCookieSettingsModal()">Çerez Ayarları</a>
-                </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVrmob=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         .btn-color {
