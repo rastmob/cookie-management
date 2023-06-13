@@ -65,7 +65,7 @@
 }
 
 .rmob-cookie-setting-modal .close:hover {
-  background: #3d71a1;
+  background: #302eba;
 }
 
 .rmob-cookie-setting-modal table {
@@ -226,7 +226,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #8d8d8d;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -645,7 +645,7 @@ input[type='checkbox'] {
 }
 
 .lbl-toggle:hover {
-  color: #656565;
+  color: #000000;
 }
 
 .lbl-toggle::before {
@@ -671,7 +671,7 @@ input[type='checkbox'] {
 }
 
 .toggle:checked+.lbl-toggle+.collapsible-content {
-  max-height: 2000px;
+  max-height: 4000px;
 }
 
 .toggle:checked+.lbl-toggle {
@@ -717,4 +717,7 @@ input[type='checkbox'] {
     height: 28px;
     margin-left: 12px;
   }
+}
+.text-none{
+  text-decoration: none;
 }
