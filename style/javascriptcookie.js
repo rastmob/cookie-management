@@ -525,115 +525,229 @@
   }
 })(jQuery)
 
+document.addEventListener("DOMContentLoaded", function() {
+
+  if (localStorage.getItem("_accept_cookie") === "true" || localStorage.getItem("_reject") === "true") {
+      hideCookiebar()
+      hideCookieSettingsModal();
+  } else if (
+      localStorage.getItem("_performance_cookie") === "true" ||
+      localStorage.getItem("_functional_cookie") === "true" ||
+      localStorage.getItem("_marketing_cookie") === "true"
+  ) {
+
+      if (document.getElementById('cookiePermissionContent')) {
+          hideCookiebar()
+      }
+  } else {
+
+      document.getElementById('cookiePermissionContent').style.display = 'block';
+  }
+  
+  _manageExistingScripts();
+
+      var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var content =  document.getElementById(this.id+'cookie_content')
+  if (content.style.display === "contents") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "contents";
+  }
+});
+}
+
+});
+
+
 function onClickCookieAccept() {
-  localStorage.setItem('_accept_cookie', 'true')
+  localStorage.setItem('_accept_cookie', 'true');
 
-  $('#performance-cookie-checkbox').attr('checked', true);
-  $('#functional-cookie-checkbox').attr('checked', true);
-  $('#marketing-cookie-checkbox').attr('checked', true);
+  document.getElementById("performance-cookie-checkbox").checked = true;
+  document.getElementById("functional-cookie-checkbox").checked = true;
+  document.getElementById("marketing-cookie-checkbox").checked = true;
 
-
-  
-  if (document.getElementsByClassName('cookie-permission-wrapper')[0]) {
-    document.getElementsByClassName(
-      'cookie-permission-wrapper'
-    )[0].style.display = 'none'
-  } else if (document.getElementsByClassName('cookie-bar')[0]) {
-    hideCookiebar()
-  }
-
- choosedCookieAccept()
+  choosedCookieAccept();
 }
+
 function choosedCookieAccept() {
-  var tempData = localStorage.getItem("selectCountry");
-  window.localStorage.clear();
-  localStorage.setItem("selectCountry",tempData);
+
+  //var isRequiredChecked = document.getElementById("required_cookie");
+  var isRequiredChecked = true;
+  var isPerformanceChecked = document.getElementById("performance-cookie-checkbox").checked;
+  var isFunctionalChecked = document.getElementById("functional-cookie-checkbox").checked;
+  var isMarketingChecked = document.getElementById("marketing-cookie-checkbox").checked;
 
 
-  var isRequiredChecked = document.getElementById(
-    'required-cookie-checkbox'
-  ).checked;
+  if (isRequiredChecked) {
+      localStorage.setItem("_required_cookie", "true")
+  }
+  if (isPerformanceChecked) {
+      localStorage.setItem("_performance_cookie", "true")
+  }
+  if (isFunctionalChecked) {
+      localStorage.setItem("_functional_cookie", "true")
+  }
+  if (isMarketingChecked) {
+      localStorage.setItem("_marketing_cookie", "true")
+  }
+  if (!isPerformanceChecked && !isFunctionalChecked && !isMarketingChecked) {
+      localStorage.setItem("_reject", "true");
+  }
+  if (isPerformanceChecked && isFunctionalChecked && isMarketingChecked) {
+    localStorage.setItem("_accept_cookie", "true");
+  }
 
-  var isPerformanceChecked = document.getElementById(
-    'performance-cookie-checkbox'
-  ).checked;
-
-  var isFunctionalChecked = document.getElementById(
-    'functional-cookie-checkbox'
-  ).checked;
-  var isMarketingChecked = document.getElementById(
-    'marketing-cookie-checkbox'
-  ).checked;
-
-  localStorage.setItem('_required_cookie', 'true')
-  
-isPerformanceChecked
-  ? localStorage.setItem('_performance_cookie', 'true')
-  : localStorage.removeItem('_performance_cookie')
-isFunctionalChecked
-  ? localStorage.setItem('_functional_cookie', 'true')
-  : localStorage.removeItem('_functional_cookie')
-isMarketingChecked
-  ? localStorage.setItem('_marketing_cookie', 'true')
-  : localStorage.removeItem('_marketing_cookie')
-!isPerformanceChecked && !isFunctionalChecked && !isMarketingChecked
-  ? localStorage.setItem('_reject', 'true')
-  : localStorage.removeItem('_reject')
- 
-  isPerformanceChecked && isFunctionalChecked && isMarketingChecked
-    ? localStorage.setItem('_accept_cookie', 'true')
-    : localStorage.removeItem('_accept_cookie') 
-
+  _manageExistingScripts()
   hideCookiebar()
-  document.getElementById('cookieSettingsModal').style.display = 'none'
+  hideCookieSettingsModal()
 
-  removeScriptbyCookieAccept()
-  window.location.reload()
-}
-
-function removeScriptwithID(id) {
-  if (document.getElementById(id)) {
-    document
-      .getElementById(id)
-      .parentNode.removeChild(document.getElementById(id))
-  }
-}
-
-function removeScriptbyCookieAccept() {
-  if (!localStorage.getItem('_performance_cookie')) {
-    removeScriptwithID('performance_cookie')
-  }
-  if (!localStorage.getItem('_functional_cookie')) {
-    removeScriptwithID('functional_cookie')
-  }
-  if (!localStorage.getItem('_marketing_cookie')) {
-    document.querySelectorAll('.marketing_cookies').forEach((element) => {
-      element.remove()
-    })
-  }
 }
 
 function rejectAll() {
-  document.getElementById('performance-cookie-checkbox').checked = false;
-  document.getElementById('functional-cookie-checkbox').checked = false;
-  document.getElementById('marketing-cookie-checkbox').checked = false;
 
-  var tempData = localStorage.getItem("selectCountry");
+  document.getElementById("performance-cookie-checkbox").checked = false;
+  document.getElementById("functional-cookie-checkbox").checked = false;
+  document.getElementById("marketing-cookie-checkbox").checked = false;
   window.localStorage.clear();
-  localStorage.setItem("selectCountry",tempData);
+  localStorage.setItem("_reject", "true");
+  localStorage.setItem("_required_cookie", "true");
 
-  localStorage.setItem('_reject', 'true');
-
-  $('#cookieSettingsModal').modal('hide')
-
+  _manageExistingScripts()
   hideCookiebar()
-  choosedCookieAccept()
+  hideCookieSettingsModal()
 }
 
 function hideCookiebar() {
-  document.getElementsByClassName('cookie-bar')[0].style.display = 'none'
+  document.getElementById('cookiePermissionContent').style.display = 'none';
+
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  removeScriptbyCookieAccept()
-})
+function hideCookieSettingsModal() {
+  if (document.getElementById('cookieSettingsModal')){
+  document.getElementById('cookieSettingsModal').style.opacity = 0;
+  document.getElementById('cookieSettingsModal').style.pointerEvents = "none";
+  }
+}
+
+function showCookieSettingsModal() {
+
+  document.getElementById('cookieSettingsModal').style.opacity = 1;
+  document.getElementById('cookieSettingsModal').style.pointerEvents = "auto";
+  document.getElementById('cookieSettingsModal').style.position = "fixed";
+
+}
+
+var _config = {
+
+  'page_scripts': true,
+  'cookie_name': 'cc_cookie',
+  'cookie_expiration': 182,                 // default: 6 months (in days)
+  'script_selector': 'data-cookiecategory'
+};
+
+var _inArray = function(arr, value){
+  return arr.indexOf(value);
+}
+var _createNode = function(type){
+  var el = document.createElement(type);
+  if(type === 'button'){
+      el.setAttribute('type', type);
+  }
+  return el;
+}
+var all_categories = [];
+
+var
+_cookieconsent = {},
+saved_cookie_content = {};
+
+
+var _manageExistingScripts = function(must_enable_categories){
+
+  var scripts = document.querySelectorAll('script[' + _config.script_selector + ']');
+  var accepted_categories = ["required"];
+  var rejected_categories = [];
+  
+  if(localStorage.getItem('_performance_cookie') === 'true' ){
+    accepted_categories.push("analytics")
+  }
+  if(localStorage.getItem('_functional_cookie') === 'true' ){
+    accepted_categories.push("functional")
+  }
+  if(localStorage.getItem('_marketing_cookie') === 'true' ){
+    accepted_categories.push("marketing")
+  }
+
+  /**
+   * Load scripts (sequentially), using a recursive function
+   * which loops through the scripts array
+   * @param {Element[]} scripts scripts to load
+   * @param {number} index current script to load
+   */
+  var _loadScripts = function(scripts, index){
+
+      if(index < scripts.length){
+
+          var curr_script = scripts[index];
+          var curr_script_category = curr_script.getAttribute(_config.script_selector);
+     
+          if(_inArray(accepted_categories, curr_script_category) > -1){
+            
+              curr_script.type = curr_script.getAttribute('data-type') || 'text/javascript';
+              curr_script.removeAttribute(_config.script_selector);
+
+              var src = curr_script.getAttribute('data-src');
+              src && curr_script.removeAttribute('data-src');
+
+              var fresh_script = _createNode('script');
+              fresh_script.textContent = curr_script.innerHTML;
+
+              (function(destination, source){
+                  var attributes = source.attributes;
+                  var len = attributes.length;
+                  for(var i=0; i<len; i++){
+                                         var attr_name = attributes[i].nodeName;
+                      destination.setAttribute(attr_name , source[attr_name] || source.getAttribute(attr_name));
+                  }
+              })(fresh_script, curr_script);
+           
+              src ? (fresh_script.src = src) : (src = curr_script.src);
+              if(src){
+           
+                  if(fresh_script.readyState) {  // only required for IE <9
+                      fresh_script.onreadystatechange = function() {
+                          if (fresh_script.readyState === "loaded" || fresh_script.readyState === "complete" ) {
+                              fresh_script.onreadystatechange = null;
+                              _loadScripts(scripts, ++index);
+                          }
+                      };
+                  }else{  // others
+                      fresh_script.onload = function(){
+                          fresh_script.onload = null;
+                          _loadScripts(scripts, ++index);
+                      };
+                  }
+              }
+
+              // Replace current "sleeping" script with the new "revived" one
+              curr_script.parentNode.replaceChild(fresh_script, curr_script);
+
+              /**
+               * If we managed to get here and scr is still set, it means that
+               * the script is loading/loaded sequentially so don't go any further
+               */
+              if(src) return;
+          }
+
+          // Go to next script right away
+          _loadScripts(scripts, ++index);
+      }
+  }
+
+  _loadScripts(scripts, 0);
+}
