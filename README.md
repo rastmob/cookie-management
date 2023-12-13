@@ -2,83 +2,66 @@
 
 ## Installation
 
-The following CSS file is imported.
+### Step 1: Define Cookie Categories in HTML Scripts
 
 ```sh
-<link rel="stylesheet" href="style/csscookie.css">
+<script type="text/plain" data-cookiecategory="marketing">
+    // Marketing-related script
+</script>
+
+<script type="text/plain" data-cookiecategory="analytics">
+    // Analytics-related script
+</script>
 ```
 
-Between the **body** tags, the following code is added, and the relevant JavaScript file is imported.
+### Step 2: Import jQuery
 
 ```sh
-<body> 
-   <div id="cookiePermissionContent">
-       <div class="cookie-bar"></div>
-   </div>
-   <script src="style/javascriptcookie.js"></script>
-</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 ```
 
-In the next step, the following script should be added. A popup screen will be displayed for cookie management. The fields below can be dynamically updated to display as desired.
-
+### Step 3: Import cookiesettings.js
 
 ```sh
-<script>
-   $('document').ready(function() {
-     $("#coveredPage").cookieSettings({
-       description: `We use cookies to ...`,
-       buttonTexts: {
-         reject: "Reject All",
-         accept: "Accept All",
-         settings: "Cookie Settings",
-         choosedCookie: "Confirm My Choices"
-       },
-       modalTitle: `Cookie Management Panel`,
-       modalDescription: `You can access details about the cookies used on our site below and review our Cookie Policy for more detailed information...`,
-       cookieTypes: {
-         required_cookies: "Required/Technical Cookies",
-         performance_analytics_cookies: "Performance/Analytical Cookies",
-         functional_cookies: "Functional Cookies",
-         marketing_cookies: "Marketing Cookies"
-       },
-
-       requiredCookieContents: [{
-         cookie_name: 'exampleCookieName',
-         cookie_provider: 'exampleCookieProvider',
-         cookie_target: 'examplePurposeofUse',
-         cookie_time: 'exampleCookieTime',
-       }, ],
-       performanceAnalyticalCookieContents: [{}],
-       functionalityCookieContents: [{}],
-       marketingCookieContents: [{}],
-
-       cookieTableTitles: {
-         cookie_used_site_title: "Cookies Used on Our Website",
-         cookie_purposes_title: "Purposes of Cookie Usage",
-         cookie_status_title: "Status",
-       },
-       cookieTexts: {
-         required_cookies_text: `Required/technical cookies are used to ...
-               <a class="rm_collapse_link" target_id="collapseRequired" role="button" aria-expanded="false" aria-controls="collapseRequired"> Detail </a> `,
-         performance_cookies_text: `Performance/analytical cookies are used to ...
-               <a class="rm_collapse_link" target_id="collapsePerformance" role="button" aria-expanded="false" aria-controls="collapsePerformance"> Detail </a> `,
-         functional_cookies_text: `Functional cookies are used to ...
-               <a class="rm_collapse_link" target_id="collapseFunctional" role="button" aria-expanded="false" aria-controls="collapseFunctional"> Detail </a>  `,
-         marketing_cookies_text: `Marketing cookies are used to ...
-                <a class="rm_collapse_link" target_id="collapseMarketing" role="button" aria-expanded="false" aria-controls="collapseMarketing"> Detail </a>  `,
-       },
-       tableTitles: {
-         cookie_name_text: 'Cookie Name',
-         provider_text: 'Provider',
-         purposes_of_cookies_text: 'Purposes Of Cookie',
-         period_text: 'Time',
-       }
-     });
-   });
- </script>
-
+<script src="path/to/cookiesettings.js"></script>
 ```
 
+### Step 4: Add Cookie Bar and Modal HTML
+
+```sh
+<!-- Cookie Bar -->
+<div id="cookiePermissionContent" class="cookie-bar">
+    <p class="cookie-message">
+        We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+        <a href="/cookie-policy" target="_blank">Learn more</a>.
+    </p>
+    <div class="cookie-buttons">
+        <button id="accept-all-cookies" onclick="acceptAllCookies()">Accept All</button>
+        <button id="decline-cookies" onclick="rejectAllCookies()">Reject All</button>
+        <button id="cookie-settings" onclick="openCookieSettings()">Cookie Settings</button>
+    </div>
+</div>
+
+
+<!-- Cookie Settings Modal -->
+<div id="cookieSettingsModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+        <div class="cookie-modal-header">
+            <span class="cookie-modal-title">Cookie Settings</span>
+            <button onclick="closeCookieSettingsModal()" class="cookie-modal-close-btn">&times;</button>
+        </div>
+        <div class="cookie-modal-body">
+            <p>Adjust your cookie settings below:</p>
+            <ul id="cookieCategoryList">
+                <!-- Cookie categories will be dynamically inserted here -->
+            </ul>
+        </div>
+        <div class="cookie-modal-footer">
+            <button onclick="saveCookieSettings()">Save Settings</button>
+        </div>
+    </div>
+</div
+```
 
 ## Managing Scripts
 
