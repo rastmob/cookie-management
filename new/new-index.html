@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Your Website Title</title>
     <!-- Include your site's stylesheet or the combined CSS here -->
-    <link rel="stylesheet" href="path/to/your-stylesheet.css">
+    <link rel="stylesheet" href="new-style.css">
     <!-- Alternatively, you can include the CSS directly here using <style> tags -->
 </head>
 <body>
@@ -46,15 +46,49 @@
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Include your cookiesettings.js script -->
-    <script src="path/to/cookiesettings.js"></script>
+    <script src="new-cookiesettings.js"></script>
 
     <!-- Additional JavaScript for handling the cookie bar and modal -->
     <script>
-        // JavaScript functions for handling cookie bar and modal interactions
-        function acceptAllCookies() {
-            // Implement cookie acceptance logic
-            console.log("All cookies accepted");
+  function acceptAllCookies() {
+    // Set cookie consent in local storage
+    localStorage.setItem('cookieConsent', 'true');
+    localStorage.setItem('_performance_cookie', 'true');
+    localStorage.setItem('_functional_cookie', 'true');
+    localStorage.setItem('_marketing_cookie', 'true');
+
+    // Hide the cookie bar
+    hideCookieBar();
+
+    // Optionally, enable scripts that were blocked due to lack of consent
+    enableCookieCategoryScripts();
+
+    console.log("All cookies accepted");
+}
+
+function enableCookieCategoryScripts() {
+    $('script[data-cookiecategory]').each(function() {
+        const category = $(this).data('cookiecategory');
+        switch(category) {
+            case 'performance':
+            case 'functional':
+            case 'marketing':
+                // Execute the script if it hasn't been executed yet
+                if ($(this).attr('type') === 'text/plain') {
+                    executeScript(this);
+                }
+                break;
+            // Add cases for other categories as needed
         }
+    });
+}
+
+function executeScript(scriptElement) {
+    const scriptTag = document.createElement('script');
+    scriptTag.textContent = scriptElement.textContent;
+    document.body.appendChild(scriptTag);
+    $(scriptElement).attr('type', 'text/javascript'); // Mark as executed
+}
 
         function rejectAllCookies() {
             // Implement cookie rejection logic
