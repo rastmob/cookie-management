@@ -6,6 +6,39 @@
     <!-- Include your site's stylesheet or the combined CSS here -->
     <link rel="stylesheet" href="new-style.css" />
     <!-- Alternatively, you can include the CSS directly here using <style> tags -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+    ></script>
+    <script
+      type="text/plain"
+      data-cookiecategory="marketing"
+      data-scriptname="Marketing Script" 
+      data-scripturl="/path/to/marketing-script.js"
+      src="https://rastmobile.com/wp-content/themes/abstrak/assets/js/vendor/tilt.js?ver=1.0.0"
+    ></script>
+
+    <script
+      type="text/plain"
+      data-cookiecategory="analytics"
+      data-scriptname="analytics Script" 
+      data-scripturl="/path/to/analytics-script.js"
+      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+    ></script>
+    <script
+      type="text/plain"
+      data-cookiecategory="required"
+      data-scriptname="required Script" 
+      data-scripturl="/path/to/required-script.js"
+      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+    ></script>
+    <script
+      type="text/plain"
+      data-cookiecategory="functional"
+      data-scriptname="functional Script" 
+      data-scripturl="/path/to/functional-script.js"
+      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+    ></script>
   </head>
   <body>
     <!-- Other content of your website -->
@@ -61,92 +94,7 @@
 
     <!-- Additional JavaScript for handling the cookie bar and modal -->
     <script>
-      function acceptAllCookies() {
-        // Set cookie consent in local storage
-        localStorage.setItem("cookieConsent", "true");
-        localStorage.setItem("_performance_cookie", "true");
-        localStorage.setItem("_functional_cookie", "true");
-        localStorage.setItem("_marketing_cookie", "true");
 
-        // Hide the cookie bar
-        hideCookieBar();
-
-        // Optionally, enable scripts that were blocked due to lack of consent
-        enableCookieCategoryScripts();
-
-        console.log("All cookies accepted");
-      }
-
-      function enableCookieCategoryScripts() {
-        $("script[data-cookiecategory]").each(function () {
-          const category = $(this).data("cookiecategory");
-          switch (category) {
-            case "performance":
-            case "functional":
-            case "marketing":
-              // Execute the script if it hasn't been executed yet
-              if ($(this).attr("type") === "text/plain") {
-                executeScript(this);
-              }
-              break;
-            // Add cases for other categories as needed
-          }
-        });
-      }
-
-      function executeScript(scriptElement) {
-        const scriptTag = document.createElement("script");
-        scriptTag.textContent = scriptElement.textContent;
-        document.body.appendChild(scriptTag);
-        $(scriptElement).attr("type", "text/javascript"); // Mark as executed
-      }
-      function rejectAllCookies() {
-        // Set cookie consent flags in local storage
-        localStorage.setItem("cookieConsent", "false");
-        localStorage.setItem("_performance_cookie", "false");
-        localStorage.setItem("_functional_cookie", "false");
-        localStorage.setItem("_marketing_cookie", "false");
-
-        // Hide the cookie bar
-        hideCookieBar();
-
-        // Optionally, disable scripts or functionalities that require consent
-        disableNonEssentialScripts();
-
-        console.log("All non-essential cookies rejected");
-      }
-
-      function disableNonEssentialScripts() {
-        $("script[data-cookiecategory]").each(function () {
-          const category = $(this).data("cookiecategory");
-          switch (category) {
-            case "performance":
-            case "functional":
-            case "marketing":
-              // Logic to disable or not execute the script
-              // For example, you could remove the script or mark it as disabled
-              $(this).remove();
-              break;
-            // Add cases for other categories as needed
-          }
-        });
-      }
-
-      function openCookieSettings() {
-        // Show the cookie settings modal
-        document.getElementById("cookieSettingsModal").style.display = "block";
-      }
-
-      function closeCookieSettingsModal() {
-        // Close the cookie settings modal
-        document.getElementById("cookieSettingsModal").style.display = "none";
-      }
-
-      function saveCookieSettings() {
-        // Save the cookie settings as per user preferences
-        console.log("Cookie settings saved");
-        closeCookieSettingsModal();
-      }
     </script>
   </body>
 </html>
