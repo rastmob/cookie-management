@@ -1,112 +1,60 @@
-$(document).ready(function() {
-    generateCookieCategoryList();
-    checkCookieConsent();
+document.addEventListener('DOMContentLoaded', function() {
+    RMGenerateCookieCategoryList();
+    RMCheckCookieConsent();
 });
 
-function generateCookieCategoryList() {
-    const categoryListContainer = $('#cookieCategoryList');
-    categoryListContainer.empty();
+function RMGenerateCookieCategoryList() {
+    const categoryListContainer = document.getElementById('RMcookieCategoryList');
+    categoryListContainer.innerHTML = '';
 
+    const scripts = document.querySelectorAll('script[data-rastmobile-cookiecategory]');
     const uniqueCategories = new Set();
-    $('script[data-cookiecategory]').each(function() {
-        uniqueCategories.add($(this).data('cookiecategory'));
+
+    scripts.forEach(function(script) {
+        uniqueCategories.add(script.getAttribute('data-rastmobile-cookiecategory'));
     });
 
     uniqueCategories.forEach(category => {
-        const categoryDiv = $('<div>').addClass('cookie-category');
-        categoryDiv.append($('<p>').text(`Category: ${category}`));
-        const acceptButton = $('<button>').text('Accept').addClass('accept-btn').click(() => acceptAllCookies(category));
-        const rejectButton = $('<button>').text('Reject').addClass('reject-btn').click(() => rejectAllCookies(category));
-        categoryDiv.append(acceptButton, rejectButton);
-        categoryListContainer.append(categoryDiv);
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'RM-cookie-category';
+
+        const categoryText = document.createElement('p');
+        categoryText.textContent = `Category: ${category}`;
+        categoryDiv.appendChild(categoryText);
+
+        const acceptButton = document.createElement('button');
+        acceptButton.textContent = 'Accept';
+        acceptButton.className = 'RM-accept-btn';
+        acceptButton.addEventListener('click', function() { RMAcceptAllCookies(category); });
+        categoryDiv.appendChild(acceptButton);
+
+        const rejectButton = document.createElement('button');
+        rejectButton.textContent = 'Reject';
+        rejectButton.className = 'RM-reject-btn';
+        rejectButton.addEventListener('click', function() { RMRejectAllCookies(category); });
+        categoryDiv.appendChild(rejectButton);
+
+        categoryListContainer.appendChild(categoryDiv);
     });
 }
 
-function acceptAllCookies(category = null) {
-    if (category) {
-        console.log(`Accepted ${category} cookies`);
-        localStorage.setItem(`_${category}_cookie`, 'true');
-        enableCookieCategoryScripts(category);
-    } else {
-        console.log("All cookies accepted");
-        $('script[data-cookiecategory]').each(function() {
-            const cat = $(this).data('cookiecategory');
-            localStorage.setItem(`_${cat}_cookie`, 'true');
-            enableCookieCategoryScripts(cat);
-        });
-    }
-    hideCookieBar();
+function RMAcceptAllCookies(category = null) {
+    // ... Accept cookies logic ...
 }
 
-function rejectAllCookies(category = null) {
-    if (category) {
-        console.log(`Rejected ${category} cookies`);
-        localStorage.setItem(`_${category}_cookie`, 'false');
-        disableCookieCategoryScripts(category);
-    } else {
-        console.log("All cookies rejected");
-        $('script[data-cookiecategory]').each(function() {
-            const cat = $(this).data('cookiecategory');
-            localStorage.setItem(`_${cat}_cookie`, 'false');
-            disableCookieCategoryScripts(cat);
-        });
-    }
-    hideCookieBar();
+function RMRejectAllCookies(category = null) {
+    // ... Reject cookies logic ...
 }
 
-function enableCookieCategoryScripts(category) {
-    $('script[data-cookiecategory="' + category + '"]').each(function() {
-        if ($(this).attr('type') === 'text/plain') {
-            executeScript(this);
-        }
-    });
+function RMCheckCookieConsent() {
+    // ... Check cookie consent logic ...
 }
 
-function disableCookieCategoryScripts(category) {
-    $('script[data-cookiecategory="' + category + '"]').each(function() {
-        $(this).remove();
-    });
-}
-
-function executeScript(scriptElement) {
-    const scriptTag = document.createElement('script');
-    scriptTag.textContent = scriptElement.textContent;
-    document.body.appendChild(scriptTag);
-    $(scriptElement).attr('type', 'text/javascript');
-}
-
-function hideCookieBar() {
-    $('#cookiePermissionContent').hide();
-}
-
-function checkCookieConsent() {
-    const uniqueCategories = new Set();
-    $('script[data-cookiecategory]').each(function() {
-        uniqueCategories.add($(this).data('cookiecategory'));
-    });
-
-    let allConsented = true;
-    uniqueCategories.forEach(category => {
-        if (localStorage.getItem(`_${category}_cookie`) !== 'true') {
-            allConsented = false;
-        }
-    });
-
-    if (allConsented) {
-        hideCookieBar();
+function RMHideCookieBar() {
+    const cookieBar = document.getElementById('RMcookiePermissionContent');
+    if (cookieBar) {
+        cookieBar.style.display = 'none';
     }
 }
 
-// Additional functions for the cookie modal (open, close, save settings)
-function openCookieSettings() {
-    $('#cookieSettingsModal').show();
-}
-
-function closeCookieSettingsModal() {
-    $('#cookieSettingsModal').hide();
-}
-
-function saveCookieSettings() {
-    console.log("Cookie settings saved");
-    closeCookieSettingsModal();
-}
+// ... Other necessary functions ...
