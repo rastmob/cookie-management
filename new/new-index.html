@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Your Website Title</title>
     <!-- Include your site's stylesheet or the combined CSS here -->
-    <link rel="stylesheet" href="new-style.css">
+    <link rel="stylesheet" href="new-style.css" />
     <!-- Alternatively, you can include the CSS directly here using <style> tags -->
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Other content of your website -->
 
     <!-- Cookie Bar -->
     <div id="cookiePermissionContent" class="cookie-bar">
-        <p class="cookie-message">
-            We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
-            <a href="/cookie-policy" target="_blank">Learn more</a>.
-        </p>
-        <div class="cookie-buttons">
-            <button id="accept-all-cookies" onclick="acceptAllCookies()">Accept All</button>
-            <button id="decline-cookies" onclick="rejectAllCookies()">Reject All</button>
-            <button id="cookie-settings" onclick="openCookieSettings()">Cookie Settings</button>
-        </div>
+      <p class="cookie-message">
+        We use cookies to enhance your experience. By continuing to visit this
+        site you agree to our use of cookies.
+        <a href="/cookie-policy" target="_blank">Learn more</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="accept-all-cookies" onclick="acceptAllCookies()">
+          Accept All
+        </button>
+        <button id="decline-cookies" onclick="rejectAllCookies()">
+          Reject All
+        </button>
+        <button id="cookie-settings" onclick="openCookieSettings()">
+          Cookie Settings
+        </button>
+      </div>
     </div>
 
     <!-- Cookie Settings Modal -->
     <div id="cookieSettingsModal" class="cookie-modal">
-        <div class="cookie-modal-content">
-            <div class="cookie-modal-header">
-                <span class="cookie-modal-title">Cookie Settings</span>
-                <button onclick="closeCookieSettingsModal()" class="cookie-modal-close-btn">&times;</button>
-            </div>
-            <div class="cookie-modal-body">
-                <p>Adjust your cookie settings below:</p>
-                <ul id="cookieCategoryList">
-                    <!-- Cookie categories will be dynamically inserted here -->
-                </ul>
-            </div>
-            <div class="cookie-modal-footer">
-                <button onclick="saveCookieSettings()">Save Settings</button>
-            </div>
+      <div class="cookie-modal-content">
+        <div class="cookie-modal-header">
+          <span class="cookie-modal-title">Cookie Settings</span>
+          <button
+            onclick="closeCookieSettingsModal()"
+            class="cookie-modal-close-btn"
+          >
+            &times;
+          </button>
         </div>
+        <div class="cookie-modal-body">
+          <p>Adjust your cookie settings below:</p>
+          <ul id="cookieCategoryList">
+            <!-- Cookie categories will be dynamically inserted here -->
+          </ul>
+        </div>
+        <div class="cookie-modal-footer">
+          <button onclick="saveCookieSettings()">Save Settings</button>
+        </div>
+      </div>
     </div>
 
     <!-- Include jQuery -->
@@ -50,66 +61,92 @@
 
     <!-- Additional JavaScript for handling the cookie bar and modal -->
     <script>
-  function acceptAllCookies() {
-    // Set cookie consent in local storage
-    localStorage.setItem('cookieConsent', 'true');
-    localStorage.setItem('_performance_cookie', 'true');
-    localStorage.setItem('_functional_cookie', 'true');
-    localStorage.setItem('_marketing_cookie', 'true');
+      function acceptAllCookies() {
+        // Set cookie consent in local storage
+        localStorage.setItem("cookieConsent", "true");
+        localStorage.setItem("_performance_cookie", "true");
+        localStorage.setItem("_functional_cookie", "true");
+        localStorage.setItem("_marketing_cookie", "true");
 
-    // Hide the cookie bar
-    hideCookieBar();
+        // Hide the cookie bar
+        hideCookieBar();
 
-    // Optionally, enable scripts that were blocked due to lack of consent
-    enableCookieCategoryScripts();
+        // Optionally, enable scripts that were blocked due to lack of consent
+        enableCookieCategoryScripts();
 
-    console.log("All cookies accepted");
-}
+        console.log("All cookies accepted");
+      }
 
-function enableCookieCategoryScripts() {
-    $('script[data-cookiecategory]').each(function() {
-        const category = $(this).data('cookiecategory');
-        switch(category) {
-            case 'performance':
-            case 'functional':
-            case 'marketing':
-                // Execute the script if it hasn't been executed yet
-                if ($(this).attr('type') === 'text/plain') {
-                    executeScript(this);
-                }
-                break;
+      function enableCookieCategoryScripts() {
+        $("script[data-cookiecategory]").each(function () {
+          const category = $(this).data("cookiecategory");
+          switch (category) {
+            case "performance":
+            case "functional":
+            case "marketing":
+              // Execute the script if it hasn't been executed yet
+              if ($(this).attr("type") === "text/plain") {
+                executeScript(this);
+              }
+              break;
             // Add cases for other categories as needed
-        }
-    });
-}
+          }
+        });
+      }
 
-function executeScript(scriptElement) {
-    const scriptTag = document.createElement('script');
-    scriptTag.textContent = scriptElement.textContent;
-    document.body.appendChild(scriptTag);
-    $(scriptElement).attr('type', 'text/javascript'); // Mark as executed
-}
+      function executeScript(scriptElement) {
+        const scriptTag = document.createElement("script");
+        scriptTag.textContent = scriptElement.textContent;
+        document.body.appendChild(scriptTag);
+        $(scriptElement).attr("type", "text/javascript"); // Mark as executed
+      }
+      function rejectAllCookies() {
+        // Set cookie consent flags in local storage
+        localStorage.setItem("cookieConsent", "false");
+        localStorage.setItem("_performance_cookie", "false");
+        localStorage.setItem("_functional_cookie", "false");
+        localStorage.setItem("_marketing_cookie", "false");
 
-        function rejectAllCookies() {
-            // Implement cookie rejection logic
-            console.log("All cookies rejected");
-        }
+        // Hide the cookie bar
+        hideCookieBar();
 
-        function openCookieSettings() {
-            // Show the cookie settings modal
-            document.getElementById('cookieSettingsModal').style.display = 'block';
-        }
+        // Optionally, disable scripts or functionalities that require consent
+        disableNonEssentialScripts();
 
-        function closeCookieSettingsModal() {
-            // Close the cookie settings modal
-            document.getElementById('cookieSettingsModal').style.display = 'none';
-        }
+        console.log("All non-essential cookies rejected");
+      }
 
-        function saveCookieSettings() {
-            // Save the cookie settings as per user preferences
-            console.log("Cookie settings saved");
-            closeCookieSettingsModal();
-        }
+      function disableNonEssentialScripts() {
+        $("script[data-cookiecategory]").each(function () {
+          const category = $(this).data("cookiecategory");
+          switch (category) {
+            case "performance":
+            case "functional":
+            case "marketing":
+              // Logic to disable or not execute the script
+              // For example, you could remove the script or mark it as disabled
+              $(this).remove();
+              break;
+            // Add cases for other categories as needed
+          }
+        });
+      }
+
+      function openCookieSettings() {
+        // Show the cookie settings modal
+        document.getElementById("cookieSettingsModal").style.display = "block";
+      }
+
+      function closeCookieSettingsModal() {
+        // Close the cookie settings modal
+        document.getElementById("cookieSettingsModal").style.display = "none";
+      }
+
+      function saveCookieSettings() {
+        // Save the cookie settings as per user preferences
+        console.log("Cookie settings saved");
+        closeCookieSettingsModal();
+      }
     </script>
-</body>
+  </body>
 </html>
