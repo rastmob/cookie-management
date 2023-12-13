@@ -8,7 +8,7 @@ The following CSS file is imported.
 <link rel="stylesheet" href="style/csscookie.css">
 ```
 
-Between the <body> ... </body> tags, the following code is added, and the relevant JavaScript file is imported.
+Between the **body** tags, the following code is added, and the relevant JavaScript file is imported.
 
 ```sh
 <body> 
@@ -82,13 +82,13 @@ In the next step, the following script should be added. A popup screen will be d
 
 ## Managing Scripts
 
-All scripts to be managed should have their types set as **type="text/plain"**. Then, the **data-cookiecategory="<category>"** attribute should be added.
+All scripts to be managed should have their types set as **type="text/plain"**. Then, the **data-cookiecategory="categoryType"** attribute should be added.
 
-For **<category>**, you can use 4 category types: **required, analytics, functional,** and **marketing**. An example usage is as follows:
+For **data-cookiecategory**, you can use 4 category types: **required, analytics, functional,** and **marketing**. An example usage is as follows:
 
 ```sh
 <!-- Inline script -->
-<script type="text/plain” data-cookiecategory="marketing">
+<script type="text/plain" data-cookiecategory="marketing">
     console.log("marketing script");
 </script>
 ```
