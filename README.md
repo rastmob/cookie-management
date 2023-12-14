@@ -10,6 +10,9 @@ This repository contains a JavaScript-based cookie consent management system des
 - Accept/Reject options for individual cookie categories
 - Easy customization and integration
 
+![Screen Shot 2023-12-14 at 19 35 52](https://github.com/rastmob/cookie-management/assets/58806790/97a55426-263b-4419-9ad6-03bc4106159d)
+
+
 ## Installation
 1. **Clone the Repository:**
    ```bash
