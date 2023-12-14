@@ -5,8 +5,6 @@
     <title>Rast Mobile Website</title>
     <link rel="stylesheet" href="./style.css" />
 
-
-
     <!-- Marketing Script -->
     <script
       type="text/plain"
@@ -70,16 +68,17 @@
           <button
             onclick="closeCookieSettingsModal()"
             class="RM-cookie-modal-close-btn"
-          >
-        
-          </button>
+          ></button>
         </div>
         <div class="RM-cookie-modal-body">
           <ul id="RMcookieCategoryList">
             <!-- Cookie categories will be dynamically inserted here -->
           </ul>
         </div>
+
         <div class="RM-cookie-modal-footer">
+          <button onclick="RMAcceptAllCookies()">Accept All</button>
+          <button onclick="RMRejectAllCookies()">Reject All</button>
           <button onclick="saveCookieSettings()">Save Settings</button>
         </div>
       </div>

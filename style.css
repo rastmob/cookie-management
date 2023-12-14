@@ -120,3 +120,9 @@
 #RMcookieCategoryList button:hover {
     background-color: #0056b3;
 }
+
+.RM-cookie-modal-footer button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    /* Additional styling */
+}

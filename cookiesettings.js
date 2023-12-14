@@ -105,23 +105,34 @@ function RMRejectCookies(category) {
 }
 
 function RMAcceptAllCookies() {
-    const categories = document.querySelectorAll('script[data-rastmobile-cookiecategory]');
-    categories.forEach(script => {
-        const category = script.getAttribute('data-rastmobile-cookiecategory');
-        localStorage.setItem(`RM_${category}_cookie`, 'true');
-        console.log(`Accepted ${category}`);
+    const categories = new Set();
+    document.querySelectorAll('script[data-rastmobile-cookiecategory]').forEach(script => {
+        categories.add(script.getAttribute('data-rastmobile-cookiecategory'));
     });
-    RMHideCookieBar();
+
+    categories.forEach(category => {
+        localStorage.setItem(`RM_${category}_cookie`, 'true');
+    });
+
+    RMCheckCookieConsent();
+    closeCookieSettingsModal(); // Optionally close the modal after action
 }
 
 function RMRejectAllCookies() {
-    const categories = document.querySelectorAll('script[data-rastmobile-cookiecategory]');
-    categories.forEach(script => {
-        const category = script.getAttribute('data-rastmobile-cookiecategory');
+    const categories = new Set();
+    document.querySelectorAll('script[data-rastmobile-cookiecategory]').forEach(script => {
+        categories.add(script.getAttribute('data-rastmobile-cookiecategory'));
+    });
+
+    categories.forEach(category => {
         localStorage.setItem(`RM_${category}_cookie`, 'false');
     });
-    RMHideCookieBar();
+
+    RMCheckCookieConsent();
+    closeCookieSettingsModal(); // Optionally close the modal after action
 }
+
+
 function RMCheckCookieConsent() {
     const categories = document.querySelectorAll('script[data-rastmobile-cookiecategory]');
     let allConsented = categories.length > 0; // Assume true only if categories exist
