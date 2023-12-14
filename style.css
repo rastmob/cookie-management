@@ -1,5 +1,6 @@
 /* Cookie Bar Styles */
 #RMcookiePermissionContent {
+    display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -7,7 +8,6 @@
     background-color: #f8f9fa;
     padding: 10px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
@@ -89,5 +89,34 @@
 }
 
 .RM-cookie-modal-footer button:hover {
+    background-color: #0056b3;
+}
+#RMcookieCategoryList table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#RMcookieCategoryList th, #RMcookieCategoryList td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#RMcookieCategoryList th {
+    background-color: #f2f2f2;
+}
+
+#RMcookieCategoryList button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+}
+
+#RMcookieCategoryList button:hover {
     background-color: #0056b3;
 }
