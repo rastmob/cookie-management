@@ -16,7 +16,7 @@ This repository contains a JavaScript-based cookie consent management system des
 ## Installation
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/rastmobile-cookie-consent.git
+   git clone https://github.com/rastmob/rastmobile-cookie-consent.git
    ```
 
 2. **Include the Script and CSS:**
