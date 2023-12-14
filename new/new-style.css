@@ -1,24 +1,24 @@
 /* Cookie Bar Styles */
-#cookiePermissionContent {
+#RMcookiePermissionContent {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: #f8f9fa;
     padding: 10px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
 }
 
-.cookie-message {
+.RM-cookie-message {
     margin: 0;
     color: #333;
 }
 
-.cookie-buttons button {
+.RM-cookie-buttons button {
     margin-left: 10px;
     padding: 5px 15px;
     background-color: #007bff;
@@ -28,12 +28,12 @@
     cursor: pointer;
 }
 
-.cookie-buttons button:hover {
+.RM-cookie-buttons button:hover {
     background-color: #0056b3;
 }
 
 /* Cookie Modal Styles */
-.cookie-modal {
+.RM-cookie-modal {
     position: fixed;
     z-index: 1001;
     left: 50%;
@@ -43,42 +43,43 @@
     max-width: 500px;
     background-color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    display: none; /* Hidden by default */
+    display: none;
 }
 
-.cookie-modal-content {
+.RM-cookie-modal-content {
     padding: 20px;
 }
 
-.cookie-modal-header {
+.RM-cookie-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cookie-modal-title {
+.RM-cookie-modal-title {
     font-size: 20px;
     margin: 0;
 }
 
-.cookie-modal-close-btn {
+.RM-cookie-modal-close-btn {
     border: none;
     background: none;
     cursor: pointer;
     font-size: 25px;
 }
 
-.cookie-modal-body {
-    margin-top: 15px;
+.RM-cookie-modal-body ul {
+    list-style: none;
+    padding: 0;
 }
 
-.cookie-modal-footer {
+.RM-cookie-modal-footer {
     margin-top: 15px;
     display: flex;
     justify-content: flex-end;
 }
 
-.cookie-modal-footer button {
+.RM-cookie-modal-footer button {
     padding: 5px 15px;
     background-color: #007bff;
     color: white;
@@ -87,32 +88,6 @@
     cursor: pointer;
 }
 
-.cookie-modal-footer button:hover {
+.RM-cookie-modal-footer button:hover {
     background-color: #0056b3;
-}
-
-.accept-btn, .reject-btn {
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.accept-btn {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.reject-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-.accept-btn:hover {
-    background-color: #45a049;
-}
-
-.reject-btn:hover {
-    background-color: #d32f2f;
 }

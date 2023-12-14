@@ -1,100 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Your Website Title</title>
-    <!-- Include your site's stylesheet or the combined CSS here -->
-    <link rel="stylesheet" href="new-style.css" />
-    <!-- Alternatively, you can include the CSS directly here using <style> tags -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
-    ></script>
-    <script
-      type="text/plain"
-      data-cookiecategory="marketing"
-      data-scriptname="Marketing Script" 
-      data-scripturl="/path/to/marketing-script.js"
-      src="https://rastmobile.com/wp-content/themes/abstrak/assets/js/vendor/tilt.js?ver=1.0.0"
-    ></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Rast Mobile Website</title>
+    <!-- Include your site's stylesheet here -->
+    <link rel="stylesheet" href="./new-style.css">
 
     <script
-      type="text/plain"
-      data-cookiecategory="analytics"
-      data-scriptname="analytics Script" 
-      data-scripturl="/path/to/analytics-script.js"
-      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
-    ></script>
-    <script
-      type="text/plain"
-      data-cookiecategory="required"
-      data-scriptname="required Script" 
-      data-scripturl="/path/to/required-script.js"
-      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
-    ></script>
-    <script
-      type="text/plain"
-      data-cookiecategory="functional"
-      data-scriptname="functional Script" 
-      data-scripturl="/path/to/functional-script.js"
-      src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
-    ></script>
-  </head>
-  <body>
-    <!-- Other content of your website -->
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+  ></script>
+  <script
+    type="text/plain"
+    data-cookiecategory="marketing"
+    data-scriptname="Marketing Script" 
+    data-scripturl="/path/to/marketing-script.js"
+    src="https://rastmobile.com/wp-content/themes/abstrak/assets/js/vendor/tilt.js?ver=1.0.0"
+  ></script>
 
-    <!-- Cookie Bar -->
-    <div id="cookiePermissionContent" class="cookie-bar">
-      <p class="cookie-message">
-        We use cookies to enhance your experience. By continuing to visit this
-        site you agree to our use of cookies.
-        <a href="/cookie-policy" target="_blank">Learn more</a>.
-      </p>
-      <div class="cookie-buttons">
-        <button id="accept-all-cookies" onclick="acceptAllCookies()">
-          Accept All
-        </button>
-        <button id="decline-cookies" onclick="rejectAllCookies()">
-          Reject All
-        </button>
-        <button id="cookie-settings" onclick="openCookieSettings()">
-          Cookie Settings
-        </button>
-      </div>
-    </div>
+  <script
+    type="text/plain"
+    data-cookiecategory="analytics"
+    data-scriptname="analytics Script" 
+    data-scripturl="/path/to/analytics-script.js"
+    src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+  ></script>
+  <script
+    type="text/plain"
+    data-cookiecategory="required"
+    data-scriptname="required Script" 
+    data-scripturl="/path/to/required-script.js"
+    src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+  ></script>
+  <script
+    type="text/plain"
+    data-cookiecategory="functional"
+    data-scriptname="functional Script" 
+    data-scripturl="/path/to/functional-script.js"
+    src="https://www.googletagmanager.com/gtag/js?id=G-D361WDKJD9"
+  ></script>
+</head>
+<body>
 
-    <!-- Cookie Settings Modal -->
-    <div id="cookieSettingsModal" class="cookie-modal">
-      <div class="cookie-modal-content">
-        <div class="cookie-modal-header">
-          <span class="cookie-modal-title">Cookie Settings</span>
-          <button
-            onclick="closeCookieSettingsModal()"
-            class="cookie-modal-close-btn"
-          >
-            &times;
-          </button>
+ 
+    
+        <!-- Cookie Bar -->
+        <div id="RMcookiePermissionContent" class="RM-cookie-bar">
+            <p class="RM-cookie-message">
+                We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+                <a href="/cookie-policy" target="_blank">Learn more</a>.
+            </p>
+            <div class="RM-cookie-buttons">
+                <button onclick="RMAcceptAllCookies()">Accept All</button>
+                <button onclick="RMRejectAllCookies()">Reject All</button>
+                <button onclick="openCookieSettings()">Cookie Settings</button>
+            </div>
         </div>
-        <div class="cookie-modal-body">
-          <p>Adjust your cookie settings below:</p>
-          <ul id="cookieCategoryList">
-            <!-- Cookie categories will be dynamically inserted here -->
-          </ul>
+    
+        <!-- Cookie Settings Modal -->
+        <div id="RMcookieSettingsModal" class="RM-cookie-modal">
+            <div class="RM-cookie-modal-content">
+                <div class="RM-cookie-modal-header">
+                    <span class="RM-cookie-modal-title">Cookie Settings</span>
+                    <button onclick="closeCookieSettingsModal()" class="RM-cookie-modal-close-btn">&times;</button>
+                </div>
+                <div class="RM-cookie-modal-body">
+                    <ul id="RMcookieCategoryList">
+                        <!-- Cookie categories will be dynamically inserted here -->
+                    </ul>
+                </div>
+                <div class="RM-cookie-modal-footer">
+                    <button onclick="saveCookieSettings()">Save Settings</button>
+                </div>
+            </div>
         </div>
-        <div class="cookie-modal-footer">
-          <button onclick="saveCookieSettings()">Save Settings</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include your cookiesettings.js script -->
-    <script src="new-cookiesettings.js"></script>
-
-    <!-- Additional JavaScript for handling the cookie bar and modal -->
-    <script>
-
-    </script>
-  </body>
+    
+        <script src="./new-cookiesettings.js"></script>
+</body>
 </html>
