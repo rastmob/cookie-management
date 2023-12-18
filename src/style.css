@@ -38,6 +38,7 @@
     color: #333;
 }
 
+
 .RM-cookie-buttons button {
     margin-left: 10px;
     padding: 10px 20px;
@@ -86,9 +87,11 @@
     z-index: 1001;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 500px;
+ 
+    width: 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Ensure modal does not exceed screen size */
+    margin: 0 10px; /* Add some margin to the left and right */
+    transform: translate(-50%, -50%) scale(1); /* Adjust scale for smaller screens */
     background-color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     display: none;
@@ -212,4 +215,33 @@
     padding: 5px 10px;
     margin-right: 10px;
     /* Additional styling */
+}
+
+@media (min-width: 768px) {
+    /* Adjustments for larger screens */
+
+    .RM-cookie-bar {
+        flex-direction: row; /* Display items in a row for larger screens */
+        align-items: center; /* Align items in the center for larger screens */
+    }
+
+    .RM-cookie-logo {
+        margin-bottom: 0; /* No bottom margin on larger screens */
+    }
+
+    .RM-cookie-message {
+        flex: 1; /* Allow message to fill available space */
+        margin-bottom: 0; /* No bottom margin on larger screens */
+    }
+
+    .RM-cookie-buttons {
+        justify-content: flex-end; /* Align buttons to the end on larger screens */
+    }
+
+    .RM-cookie-modal {
+        width: 80%; /* Modal width adjusted for larger screens */
+        max-width: 500px; /* Max modal width for larger screens */
+        margin: 0; /* No side margins on larger screens */
+        transform: translate(-50%, -50%) scale(1); /* Reset scale for larger screens */
+    }
 }
