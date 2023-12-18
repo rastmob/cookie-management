@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>Rast Mobile Website</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <!-- Marketing Script -->
     <script
@@ -48,15 +50,35 @@
   <body>
     <!-- Cookie Bar -->
     <div id="RMcookiePermissionContent" class="RM-cookie-bar">
-      <p class="RM-cookie-message">
-        We use cookies to enhance your experience. By continuing to visit this
-        site you agree to our use of cookies.
-        <a href="/cookie-policy" target="_blank">Learn more</a>.
-      </p>
+      <div class="RM-cookie-logo-container">
+       <a href="https://www.rastmobile.com" target="_blank" title="Rast Mobile LTD."> <img src="img/Rastmobile_Logo_HD-300x300.png" alt="Rast Mobile Logo" class="RM-cookie-logo"></a>
+    </div>
+    <div class="RM-cookie-socials">
+      <a href="https://www.linkedin.com/company/rastmobile/" target="_blank" class="social-link">
+          <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/mobilerast/" target="_blank" class="social-link">
+          <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.behance.net/rastmobile" target="_blank" class="social-link">
+          <i class="fab fa-behance"></i>
+      </a>
+      <a href="https://twitter.com/rastmobile" target="_blank" class="social-link">
+          <i class="fab fa-twitter"></i>
+      </a>
+  </div>
+    <div class="RM-cookie-message">
+      We use cookies to improve your experience. By continuing to visit this site you agree to our use of cookies.
+      <a href="https://rastmobile.com/gizlilik-politikasi/" target="_blank">Learn more</a>.
+  </div>
+
+
+
+
       <div class="RM-cookie-buttons">
-        <button onclick="RMAcceptAllCookies()">Accept All</button>
-        <button onclick="RMRejectAllCookies()">Reject All</button>
-        <button onclick="openCookieSettings()">Cookie Settings</button>
+        <button onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept">Accept All</button>
+        <button onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject">Reject All</button>
+        <button onclick="openCookieSettings()" class="RM-btn RM-btn-settings">Cookie Settings</button>
       </div>
     </div>
 
@@ -71,15 +93,14 @@
           ></button>
         </div>
         <div class="RM-cookie-modal-body">
-          <ul id="RMcookieCategoryList">
+          <ul id="RMcookieCategoryList" class="RM-cookie-category-list">
             <!-- Cookie categories will be dynamically inserted here -->
           </ul>
         </div>
 
         <div class="RM-cookie-modal-footer">
-          <button onclick="RMAcceptAllCookies()">Accept All</button>
-          <button onclick="RMRejectAllCookies()">Reject All</button>
-          <button onclick="saveCookieSettings()">Save Settings</button>
+          <button onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept-all">Accept All</button>
+          <button onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject-all">Reject All</button>
         </div>
       </div>
     </div>

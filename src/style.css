@@ -13,6 +13,26 @@
     z-index: 1000;
 }
 
+
+.RM-cookie-bar {
+    background-color: #000; /* Rast Mobile dark color */
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.RM-cookie-logo {
+    width: 75px; /* or your preferred size */
+    margin-right: 15px;
+}
+
+
 .RM-cookie-message {
     margin: 0;
     color: #333;
@@ -20,16 +40,44 @@
 
 .RM-cookie-buttons button {
     margin-left: 10px;
-    padding: 5px 15px;
-    background-color: #007bff;
-    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    color:white;
 }
 
 .RM-cookie-buttons button:hover {
     background-color: #0056b3;
+}
+.RM-cookie-socials {
+    display: flex;
+    align-items: center;
+    margin-right: 15px; /* Sağ kenardan biraz boşluk */
+}
+
+.social-link {
+    color: ##000000; /* veya Rast Mobile marka rengi */
+    margin-left: 10px; /* ikonlar arası boşluk */
+    font-size: 20px; /* İkon büyüklüğü */
+    transition: color 0.7s ease; /* Renk değişimi için geçiş efekti */
+}
+
+.social-link:hover {
+    color: #aaa; /* Hover durumunda ikon rengi */
+}
+
+.RM-btn-accept {
+    background-color: #4CAF50; /* Rast Mobile's accent color for acceptance */
+}
+
+.RM-btn-reject {
+    background-color: #f44336; /* A contrasting color for rejection */
+}
+
+.RM-btn-settings {
+    background-color: #008CBA; /* A neutral color for settings */
 }
 
 /* Cookie Modal Styles */
@@ -79,9 +127,48 @@
     justify-content: flex-end;
 }
 
+.RM-cookie-modal-footer .RM-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.RM-btn-accept-all {
+    background-color: #4CAF50; /* Yeşil renk, kabul için */
+    color: white;
+}
+
+.RM-btn-accept-all:hover {
+    background-color: #388E3C; /* Daha koyu bir yeşil, hover durumu için */
+}
+
+.RM-btn-reject-all {
+    background-color: #f44336; /* Kırmızı renk, reddetme için */
+    color: white;
+}
+
+.RM-btn-reject-all:hover {
+    background-color: #D32F2F; /* Daha koyu bir kırmızı, hover durumu için */
+}
+
+.RM-cookie-modal-close {
+    border: none;
+    background: none;
+    color: #AAAAAA;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.RM-cookie-modal-close:hover {
+    color: #888888;
+}
+
+
 .RM-cookie-modal-footer button {
     padding: 5px 15px;
-    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
