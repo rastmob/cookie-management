@@ -6,10 +6,46 @@ const languageData = {
         settings: "Cookie Settings",
         moreInfo: "Learn More",
         cookieModalTitle: "Cookie Settings",
-        scriptName:"Script Name",
-        scriptDescription:"Description",
-        scriptCategory:"Category",
-        scriptActions:"Actions"
+        scriptName: "Script Name",
+        scriptDescription: "Description",
+        scriptCategory: "Category",
+        scriptActions: "Actions"
+    },
+    'fr': {
+        message: "Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation des cookies.",
+        accept: "Accepter tout",
+        reject: "Rejeter tout",
+        settings: "Paramètres des cookies",
+        moreInfo: "En savoir plus",
+        cookieModalTitle: "Paramètres des cookies",
+        scriptName: "Nom du script",
+        scriptDescription: "Description",
+        scriptCategory: "Catégorie",
+        scriptActions: "Actions"
+    }, 
+    'es': {
+        message: "Usamos cookies para mejorar tu experiencia. Al continuar, aceptas el uso de cookies.",
+        accept: "Aceptar Todo",
+        reject: "Rechazar Todo",
+        settings: "Configuración de Cookies",
+        moreInfo: "Más Información",
+        cookieModalTitle: "Configuración de Cookies",
+        scriptName: "Nombre del Script",
+        scriptDescription: "Descripción",
+        scriptCategory: "Categoría",
+        scriptActions: "Acciones"
+    },
+    'de': {
+        message: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Indem Sie fortfahren, stimmen Sie unserer Verwendung von Cookies zu.",
+        accept: "Alles akzeptieren",
+        reject: "Alles ablehnen",
+        settings: "Cookie-Einstellungen",
+        moreInfo: "Mehr erfahren",
+        cookieModalTitle: "Cookie-Einstellungen",
+        scriptName: "Skriptname",
+        scriptDescription: "Beschreibung",
+        scriptCategory: "Kategorie",
+        scriptActions: "Aktionen"
     },
     'tr': {
         message: "Deneyiminizi iyileştirmek için çerezleri kullanıyoruz. Devam ederek çerez kullanımımızı kabul etmiş oluyorsunuz.....",
@@ -18,10 +54,68 @@ const languageData = {
         settings: "Çerez Ayarları",
         moreInfo: "Daha Fazla Bilgi",
         cookieModalTitle: "Cookie Ayarları",
-        scriptName:"Script Adı",
-        scriptDescription:"Açıklama",
-        scriptCategory:"Kategorisi",
-        scriptActions:"Aksiyonlar"
+        scriptName: "Script Adı",
+        scriptDescription: "Açıklama",
+        scriptCategory: "Kategorisi",
+        scriptActions: "Aksiyonlar"
+    },'el': {
+        message: "Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας. Συνεχίζοντας, συμφωνείτε με τη χρήση μας των cookies.",
+        accept: "Αποδοχή όλων",
+        reject: "Απόρριψη όλων",
+        settings: "Ρυθμίσεις Cookies",
+        moreInfo: "Μάθετε περισσότερα",
+        cookieModalTitle: "Ρυθμίσεις Cookies",
+        scriptName: "Όνομα Script",
+        scriptDescription: "Περιγραφή",
+        scriptCategory: "Κατηγορία",
+        scriptActions: "Ενέργειες"
+    },
+    'nl': {
+        message: "We gebruiken cookies om uw ervaring te verbeteren. Door verder te gaan, gaat u akkoord met ons gebruik van cookies.",
+        accept: "Alles accepteren",
+        reject: "Alles afwijzen",
+        settings: "Cookie-instellingen",
+        moreInfo: "Meer leren",
+        cookieModalTitle: "Cookie-instellingen",
+        scriptName: "Scriptnaam",
+        scriptDescription: "Beschrijving",
+        scriptCategory: "Categorie",
+        scriptActions: "Acties"
+    },
+    'ar': {
+        message: "نستخدم الكوكيز لتحسين تجربتك. بالاستمرار، أنت توافق على استخدامنا للكوكيز.",
+        accept: "قبول الكل",
+        reject: "رفض الكل",
+        settings: "إعدادات الكوكيز",
+        moreInfo: "معرفة المزيد",
+        cookieModalTitle: "إعدادات الكوكيز",
+        scriptName: "اسم السكريبت",
+        scriptDescription: "الوصف",
+        scriptCategory: "الفئة",
+        scriptActions: "الإجراءات"
+    },  
+    'pt': {
+        message: "Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com o nosso uso de cookies.",
+        accept: "Aceitar tudo",
+        reject: "Rejeitar tudo",
+        settings: "Configurações de cookies",
+        moreInfo: "Saiba mais",
+        cookieModalTitle: "Configurações de cookies",
+        scriptName: "Nome do script",
+        scriptDescription: "Descrição",
+        scriptCategory: "Categoria",
+        scriptActions: "Ações"
+    },'it': {
+        message: "Utilizziamo i cookie per migliorare la tua esperienza. Continuando, accetti il nostro uso dei cookie.",
+        accept: "Accetta Tutto",
+        reject: "Rifiuta Tutto",
+        settings: "Impostazioni Cookie",
+        moreInfo: "Ulteriori Informazioni",
+        cookieModalTitle: "Impostazioni Cookie",
+        scriptName: "Nome dello Script",
+        scriptDescription: "Descrizione",
+        scriptCategory: "Categoria",
+        scriptActions: "Azioni"
     }
 };
 
@@ -50,7 +144,7 @@ function setLanguage(lang) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     RMGenerateCookieCategoryList();
     RMCheckCookieConsent();
 });
@@ -102,15 +196,15 @@ function RMGenerateCookieCategoryList() {
         // Actions (Accept/Reject Buttons)
         const tdActions = document.createElement('td');
         tr.appendChild(tdActions);
-        
+
         const acceptButton = document.createElement('button');
         acceptButton.textContent = 'Accept';
-        acceptButton.onclick = function() { RMAcceptCookies(script.getAttribute('data-rastmobile-cookiecategory')); };
+        acceptButton.onclick = function () { RMAcceptCookies(script.getAttribute('data-rastmobile-cookiecategory')); };
         tdActions.appendChild(acceptButton);
 
         const rejectButton = document.createElement('button');
         rejectButton.textContent = 'Reject';
-        rejectButton.onclick = function() { RMRejectCookies(script.getAttribute('data-rastmobile-cookiecategory')); };
+        rejectButton.onclick = function () { RMRejectCookies(script.getAttribute('data-rastmobile-cookiecategory')); };
         tdActions.appendChild(rejectButton);
     });
 }
@@ -136,13 +230,13 @@ function createCategoryButtons(category) {
     const acceptButton = document.createElement('button');
     acceptButton.textContent = 'Accept';
     acceptButton.className = 'RM-accept-btn';
-    acceptButton.onclick = function() { RMAcceptCookies(category); };
+    acceptButton.onclick = function () { RMAcceptCookies(category); };
     buttonContainer.appendChild(acceptButton);
 
     const rejectButton = document.createElement('button');
     rejectButton.textContent = 'Reject';
     rejectButton.className = 'RM-reject-btn';
-    rejectButton.onclick = function() { RMRejectCookies(category); };
+    rejectButton.onclick = function () { RMRejectCookies(category); };
     buttonContainer.appendChild(rejectButton);
 
     return buttonContainer;
