@@ -128,7 +128,7 @@
           <i class="fab fa-twitter"></i>
         </a>
       </div>
-      <div class="RM-cookie-message">
+      <div class="RM-cookie-message" id="RMcookieMessage">
         We use cookies to improve your experience. By continuing to visit this
         site you agree to our use of cookies.
         <a href="https://rastmobile.com/gizlilik-politikasi/" target="_blank"
@@ -137,13 +137,13 @@
       </div>
 
       <div class="RM-cookie-buttons">
-        <button onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept">
+        <button  id="RMacceptButton" onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept">
           Accept All
         </button>
-        <button onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject">
+        <button id="RMrejectButton" onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject">
           Reject All
         </button>
-        <button onclick="openCookieSettings()" class="RM-btn RM-btn-settings">
+        <button  id="RMsettingsButton" onclick="openCookieSettings()" class="RM-btn RM-btn-settings">
           Cookie Settings
         </button>
       </div>
@@ -153,7 +153,7 @@
     <div id="RMcookieSettingsModal" class="RM-cookie-modal">
       <div class="RM-cookie-modal-content">
         <div class="RM-cookie-modal-header">
-          <span class="RM-cookie-modal-title">Cookie Settings</span>
+          <span class="RM-cookie-modal-title"  id="RMCookieModalTitle">Cookie Settings</span>
           <button
             onclick="closeCookieSettingsModal()"
             class="RM-cookie-modal-close-btn"
@@ -167,12 +167,14 @@
 
         <div class="RM-cookie-modal-footer">
           <button
+          id="RMacceptButton" 
             onclick="RMAcceptAllCookies()"
             class="RM-btn RM-btn-accept-all"
           >
             Accept All
           </button>
           <button
+          id="RMrejectButton" 
             onclick="RMRejectAllCookies()"
             class="RM-btn RM-btn-reject-all"
           >
@@ -182,5 +184,8 @@
       </div>
     </div>
     <script src="./cookiesettings.js"></script>
+    <script type="text/javascript">
+      setLanguage('en');
+    </script>
   </body>
 </html>

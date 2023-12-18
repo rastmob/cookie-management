@@ -59,7 +59,7 @@
 }
 
 .social-link {
-    color: ##000000; /* veya Rast Mobile marka rengi */
+    color: #000000;
     margin-left: 10px; /* ikonlar arası boşluk */
     font-size: 20px; /* İkon büyüklüğü */
     transition: color 0.7s ease; /* Renk değişimi için geçiş efekti */

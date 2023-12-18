@@ -1,3 +1,55 @@
+const languageData = {
+    'en': {
+        message: "We use cookies to enhance your experience. By continuing, you agree to our use of cookies.",
+        accept: "Accept All",
+        reject: "Reject All",
+        settings: "Cookie Settings",
+        moreInfo: "Learn More",
+        cookieModalTitle: "Cookie Settings",
+        scriptName:"Script Name",
+        scriptDescription:"Description",
+        scriptCategory:"Category",
+        scriptActions:"Actions"
+    },
+    'tr': {
+        message: "Deneyiminizi iyileştirmek için çerezleri kullanıyoruz. Devam ederek çerez kullanımımızı kabul etmiş oluyorsunuz.....",
+        accept: "Tümünü Kabul Et",
+        reject: "Tümünü Reddet",
+        settings: "Çerez Ayarları",
+        moreInfo: "Daha Fazla Bilgi",
+        cookieModalTitle: "Cookie Ayarları",
+        scriptName:"Script Adı",
+        scriptDescription:"Açıklama",
+        scriptCategory:"Kategorisi",
+        scriptActions:"Aksiyonlar"
+    }
+};
+
+let currentLanguage = 'en';
+
+function updateConsentText() {
+    const texts = languageData[currentLanguage];
+    const cookieMessageDiv = document.getElementById('RMcookieMessage');
+
+    // Update the text while keeping the link
+    cookieMessageDiv.innerHTML = texts.message + ' <a href="https://rastmobile.com/gizlilik-politikasi/" target="_blank">' + texts.moreInfo + '</a>';
+
+    // Update other elements
+    document.getElementById('RMacceptButton').textContent = texts.accept;
+    document.getElementById('RMrejectButton').textContent = texts.reject;
+    document.getElementById('RMsettingsButton').textContent = texts.settings;
+    document.getElementById('RMCookieModalTitle').textContent = texts.cookieModalTitle;
+    // Continue updating other elements as necessary
+}
+
+
+function setLanguage(lang) {
+    if (languageData[lang]) {
+        currentLanguage = lang;
+        updateConsentText();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     RMGenerateCookieCategoryList();
     RMCheckCookieConsent();
@@ -16,7 +68,9 @@ function RMGenerateCookieCategoryList() {
     table.appendChild(thead);
     const headerRow = document.createElement('tr');
     thead.appendChild(headerRow);
-    ['Script Name', 'Description', 'Category', 'Actions'].forEach(text => {
+
+    const texts = languageData[currentLanguage];
+    [texts.scriptName, texts.scriptDescription, texts.scriptCategory, texts.scriptActions].forEach(text => {
         const th = document.createElement('th');
         th.textContent = text;
         headerRow.appendChild(th);
