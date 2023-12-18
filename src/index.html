@@ -3,9 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <title>Rast Mobile Website</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta
+      name="description"
+      content="Rast Mobile's Cookie Consent script helps ensure your website complies with GDPR and provides a user-friendly consent management experience."
+    />
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.rastmobile.com/" />
+    <meta property="og:title" content="Rast Mobile Cookie Consent" />
+    <meta
+      property="og:description"
+      content="Enhance user privacy and comply with GDPR using Rast Mobile's Cookie Consent management script."
+    />
+    <meta
+      property="og:image"
+      content="https://rastmobile.com/wp-content/uploads/2022/08/Rastmobile-Logo.svg"
+    />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="rastmobile.com" />
+    <meta property="twitter:url" content="https://www.rastmobile.com/" />
+    <meta name="twitter:title" content="Rast Mobile Cookie Consent" />
+    <meta
+      name="twitter:description"
+      content="Enhance user privacy and comply with GDPR using Rast Mobile's Cookie Consent management script."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rastmobile.com/wp-content/uploads/2022/08/Rastmobile-Logo.svg"
+    />
+    <meta itemprop="name" content="Rast Mobile Cookie Consent">
+    <meta itemprop="description" content="Enhance user privacy and comply with GDPR using Rast Mobile's Cookie Consent management script.">
+    <meta itemprop="image" content="https://rastmobile.com/wp-content/uploads/2022/08/Rastmobile-Logo.svg">
 
+
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <!-- Marketing Script -->
     <script
@@ -51,34 +87,65 @@
     <!-- Cookie Bar -->
     <div id="RMcookiePermissionContent" class="RM-cookie-bar">
       <div class="RM-cookie-logo-container">
-       <a href="https://www.rastmobile.com" target="_blank" title="Rast Mobile LTD."> <img src="img/Rastmobile_Logo_HD-300x300.png" alt="Rast Mobile Logo" class="RM-cookie-logo"></a>
-    </div>
-    <div class="RM-cookie-socials">
-      <a href="https://www.linkedin.com/company/rastmobile/" target="_blank" class="social-link">
+        <a
+          href="https://www.rastmobile.com"
+          target="_blank"
+          title="Rast Mobile LTD."
+        >
+          <img
+            src="img/Rastmobile_Logo_HD-300x300.png"
+            alt="Rast Mobile Logo"
+            class="RM-cookie-logo"
+        /></a>
+      </div>
+      <div class="RM-cookie-socials">
+        <a
+          href="https://www.linkedin.com/company/rastmobile/"
+          target="_blank"
+          class="social-link"
+        >
           <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.instagram.com/mobilerast/" target="_blank" class="social-link">
+        </a>
+        <a
+          href="https://www.instagram.com/mobilerast/"
+          target="_blank"
+          class="social-link"
+        >
           <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.behance.net/rastmobile" target="_blank" class="social-link">
+        </a>
+        <a
+          href="https://www.behance.net/rastmobile"
+          target="_blank"
+          class="social-link"
+        >
           <i class="fab fa-behance"></i>
-      </a>
-      <a href="https://twitter.com/rastmobile" target="_blank" class="social-link">
+        </a>
+        <a
+          href="https://twitter.com/rastmobile"
+          target="_blank"
+          class="social-link"
+        >
           <i class="fab fa-twitter"></i>
-      </a>
-  </div>
-    <div class="RM-cookie-message">
-      We use cookies to improve your experience. By continuing to visit this site you agree to our use of cookies.
-      <a href="https://rastmobile.com/gizlilik-politikasi/" target="_blank">Learn more</a>.
-  </div>
-
-
-
+        </a>
+      </div>
+      <div class="RM-cookie-message">
+        We use cookies to improve your experience. By continuing to visit this
+        site you agree to our use of cookies.
+        <a href="https://rastmobile.com/gizlilik-politikasi/" target="_blank"
+          >Learn more</a
+        >.
+      </div>
 
       <div class="RM-cookie-buttons">
-        <button onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept">Accept All</button>
-        <button onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject">Reject All</button>
-        <button onclick="openCookieSettings()" class="RM-btn RM-btn-settings">Cookie Settings</button>
+        <button onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept">
+          Accept All
+        </button>
+        <button onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject">
+          Reject All
+        </button>
+        <button onclick="openCookieSettings()" class="RM-btn RM-btn-settings">
+          Cookie Settings
+        </button>
       </div>
     </div>
 
@@ -90,7 +157,7 @@
           <button
             onclick="closeCookieSettingsModal()"
             class="RM-cookie-modal-close-btn"
-          ></button>
+          >x</button>
         </div>
         <div class="RM-cookie-modal-body">
           <ul id="RMcookieCategoryList" class="RM-cookie-category-list">
@@ -99,8 +166,18 @@
         </div>
 
         <div class="RM-cookie-modal-footer">
-          <button onclick="RMAcceptAllCookies()" class="RM-btn RM-btn-accept-all">Accept All</button>
-          <button onclick="RMRejectAllCookies()" class="RM-btn RM-btn-reject-all">Reject All</button>
+          <button
+            onclick="RMAcceptAllCookies()"
+            class="RM-btn RM-btn-accept-all"
+          >
+            Accept All
+          </button>
+          <button
+            onclick="RMRejectAllCookies()"
+            class="RM-btn RM-btn-reject-all"
+          >
+            Reject All
+          </button>
         </div>
       </div>
     </div>
