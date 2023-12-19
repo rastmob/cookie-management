@@ -43,6 +43,21 @@ The script automatically generates a cookie consent bar and a settings modal on 
 ### Customization
 You can customize the appearance and behavior of the cookie consent system by modifying `style.css` and `cookiesettings.js`.
 
+## Supported Versions
+- Google Chrome: Version 60 and later
+- Mozilla Firefox: Version 55 and later
+- Safari: Version 10 and later
+- Microsoft Edge: Version 15 and later
+- Opera: Version 47 and later
+- Internet Explorer: Version 11
+
+### Notes:
+- Mobile Browsers: If your audience uses mobile devices significantly, consider support for mobile browser versions like Chrome for Android, Safari on iOS, and Samsung Internet.
+- Fallbacks and Polyfills: For older browsers, consider using JavaScript polyfills or fallback strategies for better compatibility.
+- Testing: Always test your script across different browsers and versions to ensure compatibility.
+- Updates: Keep an eye on browser market share and update supported versions accordingly, as browser landscapes can change relatively quickly.
+
+
 ## Contributing
 Contributions are welcome! If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
 
