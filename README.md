@@ -5,10 +5,10 @@
 This repository contains a JavaScript-based cookie consent management system designed for websites to comply with privacy regulations. It includes a cookie bar and a settings modal, allowing users to manage their preferences for different categories of cookies.
 
 ## Features
-- Dynamically generated cookie settings modal
-- Support for multiple cookie categories (e.g., marketing, analytics)
-- Accept/Reject options for individual cookie categories
-- Easy customization and integration
+- Dynamically generated cookie settings modal with multi-language support.
+- Support for multiple cookie categories (e.g., Necessary, Analytics, Marketing).
+- Accept/Reject options for individual cookie categories with detailed audit logging.
+- Easy customization and integration with tag management systems.
 
 ![Modal Content](https://github.com/rastmob/cookie-management/assets/58806790/0aeb057b-3c26-4bb5-a0f1-64bd6fc05d3a)
 
