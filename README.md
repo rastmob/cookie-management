@@ -16,14 +16,14 @@ This repository contains a JavaScript-based cookie consent management system des
 ## Installation
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/rastmob/rastmobile-cookie-consent.git
+   git clone https://github.com/rastmob/cookie-management.git
    ```
 
 2. **Include the Script and CSS:**
    Add the following lines to your HTML file:
    ```html
-   <link rel="stylesheet" href="path/to/style.css">
-   <script src="path/to/cookiesettings.js"></script>
+   <link rel="stylesheet" href="./style.css">
+   <script src="./cookiesettings.js"></script>
    ```
 
 3. **Add Script Tags:**
@@ -33,7 +33,7 @@ This repository contains a JavaScript-based cookie consent management system des
      type="text/plain"
      data-rastmobile-cookiecategory="marketing"
      data-scriptname="Marketing Script"
-     data-scripturl="/path/to/marketing-script.js">
+     data-scripturl="/./marketing-script.js">
    </script>
    ```
 
